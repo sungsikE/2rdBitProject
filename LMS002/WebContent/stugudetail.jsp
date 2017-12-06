@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>학생상세페이지</title>
+<title>과거학생상세페이지</title>
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
 <div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
-<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/학생상세조회</div>
-<h1>학생상세페이지</h1>
-<form action="studetail.do?sId=${bean.sId }">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/과거학생상세조회</div>
+<h2>과거학생상세페이지</h2>
+<form action="stugudetail.do?sId=${bean.sId }">
 
 	<table border="1">
 		<tr>
@@ -46,9 +46,8 @@
 		</tr>
 	</table>
 </form>
-<a href="stuedit.do?sId=${bean.sId }">[수정]</a>
-<a href="studelete.do?sId=${bean.sId }">[삭제]</a>
-<a href="stuview.do">[목록]</a>
+<a href="stucom.do">[조회]</a>
+<a href="stu.do">[목록]</a>
 </div>
 </body>
 </html>

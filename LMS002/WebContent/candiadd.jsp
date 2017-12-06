@@ -6,47 +6,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>학생추가페이지</title>
+<title>후보생 추가 페이지</title>
 <script src="js/mktwebside.js"></script>
-<style type="text/css">
-	#addtb{
-		margin: 10px;
-	}
-	#addtb div{
-		margin-bottom: 5px;
-	}
-	#addtb label{
-		width: 65px;
-		display:inline-block;
-		background-color: darkblue;
-		color:white;
-		text-align: center;
-	}
-	#addtb button{
-		margin-left: 100px;
-		margin-top: 20px;
-		text-align: center;
-	}
-	#addtb button:hover{
-		background-color: darkblue;
-		color:white;
-		outline: 0;
-	}
-</style>
+
 </head>
 <body>
 <div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
-<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stuadd.do">학생추가</a></div>
-<h2>학생추가</h2>
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="candiadd.do">후보생추가</a></div>
+<h2>후보생추가페이지</h2>
 
-<div id="addtb">
-<form action="stuadd.do" method="post">
+<form action="candiadd.do" method="post">
 
 <div>
 	<label for="sid">아이디</label>
 	<c:forEach items="${bean }" var="bean2" begin="0" end="0">
-		<input type="text" name="sId" value="${bean2.sId }" readonly="readonly"/>
+	<input type="text" name="sId" value="${bean2.sId }" readonly="readonly"/>
 	</c:forEach>
 </div>
 <div>
@@ -66,17 +41,22 @@
 	<input type="email" name="email" />
 </div>
 <div>
-	 <label>반</label>
-	 <select name="regclass">
-		<option>수업중인 반</option>
-		<c:forEach items="${bean2 }" var="bean3">
-			<option value="${bean3 }">${bean3 }</option> 
-		</c:forEach> 	
+	상태 <select name="status">
+	<option>선택하세요</option>
+	<c:forEach items="${bean }" var="bean2">
+		<option value="${bean2.status }">${bean2.status }</option>
+	</c:forEach>
+	<!-- <option>상담중</option>
+	<option>수강대기</option>
+	<option>수강예정</option> -->
 	</select>
+</div>
+<div>
+	<label for="regclass">반</label>
+	<input type="number" name="regclass" value="9999" readonly="readonly"/>
 </div>
 	<button type="submit">입력</button>
 </form>
-</div>
 </div>
 </body>
 </html>

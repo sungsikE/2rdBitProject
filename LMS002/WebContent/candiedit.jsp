@@ -5,15 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>학생수정페이지</title>
+<title>후보생 수정페이지</title>
 <script src="js/mktwebside.js"></script>
+
 </head>
 <body>
 <div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
-<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stuedit.do">학생수정</a></div>
-<h1>학생수정페이지</h1>
-<form action="stuedit.do" method="post">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="candiedit.do">후보생수정</a></div>
+<h2>후보생 수정페이지</h2>
+<form action="candiedit.do" method="post">
 <%-- 	<c:forEach items="${bean }" var="bean"> --%>
 	<table border="1">
 		<tr>
@@ -42,7 +43,15 @@
 		</tr>
 		<tr>
 			<td>상태</td>
-			<td><input type="text" name="status" value="${bean.status }"/></td>
+			<td>
+			<select name="status">
+				<option >선택하세요</option>
+				<option value="상담중">상담중</option>
+				<option value="수강대기">수강대기</option>
+				<option value="수강예정">수강예정</option>
+			</select>
+			</td>
+			<%-- <td><input type="text" name="status" value="${bean.status }"/></td> --%>
 		</tr>
 	</table>
 	<%-- </c:forEach> --%>

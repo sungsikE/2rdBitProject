@@ -127,26 +127,26 @@
                 //console.log(lcarr[k]);  
             }
         var tStamp=0;
-            var cnt=0;
+        var cnt=0;
         document.addEventListener("wheel", function(e){
             
             console.log(lcarr);
            function actWheel(){ 
-            if(cnt>9){cnt=0;}
+            if(cnt>menu.length-1){cnt=0;}
             for(var i=0; i<menu.length; i++){
                 
-                    if((cnt+i)>=10){menu[i].style.left= lcarr[(cnt+i-10)]+"px";
+                    if((cnt+i)>=menu.length){menu[i].style.left= lcarr[(cnt+i-menu.length)]+"px";
                 console.log("cnt"+cnt);
                     }else{menu[i].style.left= lcarr[(cnt+i)]+"px";}
                 }
             cnt++;
            };
             console.log(e);
-            var eStamp=e.timeStamp;
+             var eStamp=e.timeStamp;
             tStamp+=100; //이쪽 마우스 휠 관련 속도 조정할떄 값 변경
             if(tStamp<eStamp){
                 tStamp=eStamp; 
-                window.setTimeout(actWheel,100); // 이쪽 마우스 휠 관련 속도 조정할떄 값 변경   
+                window.setTimeout(actWheel, 100); // 이쪽 마우스 휠 관련 속도 조정할떄 값 변경   
             console.log(window.setTimeout(actWheel,100));
             }else{tStamp=eStamp+300;} // 이쪽 마우스 휠 관련 속도 조정할떄 값 변경
             

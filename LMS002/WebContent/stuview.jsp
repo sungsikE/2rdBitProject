@@ -5,14 +5,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>현재학생조회페이지</title>
+<script src="js/mktwebside.js"></script>
+<script type="text/javascript">
+	/* document.getElementById('stutb').onscroll=function(){
+        console.log("scrolling");
+        document.get
+    }; */
+</script>
 <style type="text/css">
-	
+    #stutb>table{
+        overflow: auto;
+       	text-align: center;
+        width: auto;
+        border-top: 1px solid gray;
+        margin: 5px auto;
+    	border-collapse:collapse;
+    }
+    #stutb> tr,th,td{
+    	border-bottom:1px solid gray;
+    	padding:3px;
+    }
+    h2{
+    	text-align:center;
+    }
+    
 </style>
 </head>
 <body>
+<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="lmsweb">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stuview.do">현재학생조회</a></div>
 <h2>현재학생조회</h2>
-		<table border="1">
+		<div id="stutb">
+		    
+		<table >
 			<tr>
 				<th>아이디</th>
 				<th>이름</th>
@@ -29,7 +56,9 @@
 			</tr>
 		</c:forEach>
 		</table>
+	<a href="stu.do">[목록으로]</a>
+		</div>
 	
-	
+		</div>
 </body>
 </html>
