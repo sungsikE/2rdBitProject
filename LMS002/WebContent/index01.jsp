@@ -110,7 +110,8 @@
             
             var vid = document.getElementById("video");
             var menu = document.querySelectorAll("#padding>h1");
-            var content = document.querySelectorAll("#content > div");
+            var contentPrev = document.querySelectorAll("#content > div:nth-child(odd)");
+            var contentFull = document.querySelectorAll("#content > div:nth-child(even)");
             //var screenW = window.screen.width;
             var screenW = window.innerWidth;
             
@@ -143,11 +144,10 @@
            };
             console.log(e);
              var eStamp=e.timeStamp;
-            tStamp+=100; //이쪽 마우스 휠 관련 속도 조정할떄 값 변경
+            tStamp+=70; //이쪽 마우스 휠 관련 속도 조정할떄 값 변경
             if(tStamp<eStamp){
                 tStamp=eStamp; 
-                window.setTimeout(actWheel, 100); // 이쪽 마우스 휠 관련 속도 조정할떄 값 변경   
-            console.log(window.setTimeout(actWheel,100));
+                window.setTimeout(actWheel, 70); // 이쪽 마우스 휠 관련 속도 조정할떄 값 변경
             }else{tStamp=eStamp+300;} // 이쪽 마우스 휠 관련 속도 조정할떄 값 변경
             
             
@@ -165,7 +165,7 @@
                  document.getElementById("login").style.float="right";
                  });
              
-            //mouseoever to enlarge menu text
+            //mouseoever - enlarge menu and show preview
             for(let i=0; i<menu.length; i++){
                
                 menu[i].addEventListener("mouseover", function(){
@@ -183,7 +183,23 @@
                         document.getElementById("video").style.visibility="visible";
                         playVid();
                     }
+                    
+                    //remove all preview
+                    for(let j=0; j<contentPrev.length; j++){
+                    	contentPrev[j].style.display="none";
+                    }
+                    //show the hoovered preview
+                        contentPrev[i].style.display="block";
+                        contentPrev[i].style.opacity="0.5";
+                        contentPrev[i].style.position="absolute";
+                        contentPrev[i].style.left="400px";
+                        contentPrev[i].style.top="100px";
+                        contentPrev[i].style.zIndex="10";
+                    
                     menu[i].addEventListener("mouseout", function(){
+                    	
+                    	contentPrev[i].style.display="none";
+                    	
                         document.getElementById("imgs").style.visibility="hidden";
                         document.getElementById("video").style.visibility="hidden";
                         document.getElementById("imgs").style.paddingTop="0px";
@@ -228,17 +244,17 @@
                     }, 1000);
                     
                     //hide all the other contents
-                    for(let j=0; j<content.length; j++){
-                        content[j].style.display="none";
-                        
+                    for(let j=0; j<contentFull.length; j++){
+                    	contentPrev[j].style.display="none";
+                    	contentFull[j].style.display="none";
                     }
                     
                     //show the clicked content
-                        content[i].style.display="block";
-	                    content[i].style.position="absolute";
-	                    content[i].style.left="0px";
-	                    content[i].style.top="200px";
-	                    content[i].style.zIndex="10";
+                        contentFull[i].style.display="block";
+                        contentFull[i].style.position="absolute";
+                        contentFull[i].style.left="0px";
+                        contentFull[i].style.top="200px";
+                        contentFull[i].style.zIndex="10";
                     
                 });   
             }
@@ -260,7 +276,7 @@
     <img id = "map" src="imgs/map01.png" >
     <div id="content">
     	<c:forEach items="${loadmenu }" var="menulist">
-    		<div id="preview"><img src="upload/${menulist }/preview.img"/></div>
+    		<div id="preview"><img src="upload/${menulist }/preview.png"/></div>
 	    	<div id="fullview"><c:import url="upload/${menulist }/fullview.html"  charEncoding="utf-8"></c:import></div>
 	    </c:forEach>
     </div>
