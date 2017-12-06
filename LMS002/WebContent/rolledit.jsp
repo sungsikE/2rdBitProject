@@ -6,9 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="js/mktwebside.js"></script>
 </head>
 <body>
-	<hi>roll edit page</hi>
+<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="lmsweb">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="roll.do?root="""> /출결 관리 </a> /출석부 수정 </div>
+	<h3>출석부 수정</h3>
 	<form action="rollsedit.do" method="post">	
 		<table>
 			<tr>
@@ -47,5 +51,6 @@
 		</div>
 		
 		</form>
+</div>
 </body>
 </html>

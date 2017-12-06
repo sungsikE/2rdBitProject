@@ -5,10 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>비트 캠프</title>
+<script src="js/mktwebside.js"></script>
 </head>
 <body>
-	<hi>roll check page</hi>
+<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="lmsweb">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="roll.do?root="""> /출결 관리 </a> /출석부 조회 </div>
+	<h3>출석부 조회</h3>
 	
 	<table>
 				<tr>
@@ -37,5 +41,6 @@
 				</c:forEach>
 				</form>
 	</table>
+</div>
 </body>
 </html>

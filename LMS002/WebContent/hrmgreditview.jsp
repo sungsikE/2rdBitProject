@@ -5,10 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>비트 캠프</title>
+<script src="js/mktwebside.js"></script>
 </head>
 <body>
-	<h1>수정페이지</h1>
+<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="lmsweb">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 수정 </div>
+
+	<h3>직원 수정</h3>
 	<div>
 		<form method="post">
 			<table>
@@ -38,5 +43,6 @@
 			</table>
 		</form>
 	</div>
+</div>
 </body>
 </html>

@@ -5,9 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>성적 수정</title>
+<script src="js/mktwebside.js"></script>
 </head>
 <body>
+
+<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="lmsweb">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="score.do?root="""> /성적 관리 </a> /성적 수정 </div>
+<h3>성적 수정</h3>
 	<form action="scoresedit.do" method="post">	
 		<table>
 			<tr>
@@ -37,5 +43,6 @@
 		</div>
 		
 		</form>
+</div>
 </body>
 </html>

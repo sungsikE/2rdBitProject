@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -113,12 +114,11 @@
             //var screenW = window.screen.width;
             var screenW = window.innerWidth;
             
-            var wd=screenW/menu.length+150;  
+            var wd=screenW/menu.length+100;  
             var list=new Set();
             for(var j=0; j<menu.length; j++){
                 var t=wd*[j];
                 list.add(t); 
-                
             }
             var lcarr=Array.from(list);
             for(var k=0; k<menu.length; k++){
@@ -243,16 +243,9 @@
  <div id="wrapper">
         <img id="logo" src="imgs/header02.png"><!--LMS시스템 들어가야함.-->
     <div id="padding">
-    <h1>Company</h1>
-    <h1>Lectures</h1>
-    <h1>December</h1>
-    <h1>January</h1>
-    <h1>Teachers</h1>
-    <h1>Question</h1>
-    <h1>Email </h1>
-    <h1>Mem1</h1>
-    <h1>Mem2</h1>
-    <h1>Mem3</h1>    
+    <c:forEach items="${loadmenu }" var="menulist">
+    	<h1>${menulist }</h1>
+    </c:forEach>    
     </div>
     <video id="video" width="320" height="176" loop="5">
     <source src="imgs/2.mp4" type="video/mp4">
