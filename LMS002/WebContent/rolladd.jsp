@@ -11,7 +11,7 @@
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
-<div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="roll.do?root="""> /출결 관리 </a> /출석부 입력 </div>
+<div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a> /<a href="roll.do?root=""">출결 관리 </a> /출석부 입력 </div>
 	<hi>roll add page</hi>
 </div>
 </body>
