@@ -282,7 +282,7 @@
     </div>
 </div>
     <div id="login">
-    <p>직원전용 페이지</p>
+    <p>직원전용</p>
     <form action="lmsindex.do" method="post">
     <div>
         <label for="webid">ID</label>
