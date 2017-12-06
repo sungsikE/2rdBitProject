@@ -164,6 +164,7 @@
                  document.getElementById("login").style.marginLeft= "1300px";
                  document.getElementById("login").style.float="right";
                  });
+             
             //mouseoever to enlarge menu text
             for(let i=0; i<menu.length; i++){
                
@@ -234,18 +235,22 @@
                     
                     //show the clicked content
                     content[i].style.display="block";
+                    content[i].style.position="absolute";
+                    content[i].style.left="0px";
+                    content[i].style.top="200px";
+                    content[i].style.zIndex="10";
                 });   
-            } 
+            }
         };
     </script>
 </head>
 <body>
  <div id="wrapper">
-        <img id="logo" src="imgs/header02.png"><!--LMS시스템 들어가야함.-->
+    <img id="logo" src="imgs/header02.png"><!--LMS시스템 들어가야함.-->
     <div id="padding">
-    <c:forEach items="${loadmenu }" var="menulist">
-    	<h1>${menulist }</h1>
-    </c:forEach>    
+    	<c:forEach items="${loadmenu }" var="menulist">
+	    	<h1>${menulist }</h1>
+	    </c:forEach>
     </div>
     <video id="video" width="320" height="176" loop="5">
     <source src="imgs/2.mp4" type="video/mp4">
@@ -253,14 +258,10 @@
     <img id = "imgs" src="imgs/1.jpg" >
     <img id = "map" src="imgs/map01.png" >
     <div id="content">
-        <div><p>Company Content</p></div>
-        <div>Lectures Table</div>
-        <div>December Lecture</div>
-        <div>January Lecture</div>
-        <div>Teachers Profiles</div>
-        <div>Q and A table</div>
-        <div>Send Email Form</div>
-        <div>login Form</div>
+    	<c:forEach items="${loadmenu }" var="menulist">
+    		<div id="preview"><img src="upload/${menulist }/preview.img"/></div>
+	    	<div id="fullview"><c:import url="upload/${menulist }/fullview.html"  charEncoding="utf-8"></c:import></div>
+	    </c:forEach>
     </div>
 </div>
     <div id="login">
