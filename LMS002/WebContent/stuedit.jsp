@@ -9,7 +9,7 @@
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
-<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stuedit.do">학생수정</a></div>
 <h1>학생수정페이지</h1>

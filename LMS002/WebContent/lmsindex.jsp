@@ -10,7 +10,7 @@
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
-<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
 <a href="logout.do">logout</a>
 	<table>

@@ -9,9 +9,9 @@
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
-<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
-<div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 수정 </div>
+<div class="lmsnavi">현재위치: <a href="lmsindex.dstartweb.doo"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 수정 </div>
 
 	<h3>직원 수정</h3>
 	<div>

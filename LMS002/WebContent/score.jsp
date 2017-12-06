@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a> /성적 관리 </div>
 	 <p><a href="score.do?root=addview">성적 입력하기</a></p>

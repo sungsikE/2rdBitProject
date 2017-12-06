@@ -11,7 +11,7 @@
 <body>
 <c:set value="${sessionScope.power }" var="teamNullChk"></c:set>
 <c:if test="${!empty teamNullChk }">
-<div id="mktweb"><c:import url="index01.jsp"  charEncoding="utf-8"></c:import></div>
+<div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/계정관리</div>
 	<p><a class="a" href="hrmgr.do?root=add">[직원입력]</a></p>

@@ -15,7 +15,7 @@
 		   <th>번호</th>
 		   <th>작성자</th>
 		   <th>내용</th>
-		 </tr>
+		 </tr> 
 		 <c:forEach items="${questionList }" var="bean">
 		 <tr>
 		   <td><a href="qnadetail.do?idx=${bean.qnaid }">${bean.qnaid  }</a></td>
