@@ -234,11 +234,12 @@
                     }
                     
                     //show the clicked content
-                    content[i].style.display="block";
-                    content[i].style.position="absolute";
-                    content[i].style.left="0px";
-                    content[i].style.top="200px";
-                    content[i].style.zIndex="10";
+                        content[i].style.display="block";
+	                    content[i].style.position="absolute";
+	                    content[i].style.left="0px";
+	                    content[i].style.top="200px";
+	                    content[i].style.zIndex="10";
+                    
                 });   
             }
         };
