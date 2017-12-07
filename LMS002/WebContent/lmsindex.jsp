@@ -43,6 +43,9 @@
 		</c:when>
 		<c:when test="${power eq 'teach'}">
 			<div>
+				<a href="roll.do?root="" ">*출결 관리</a>
+			</div>
+			<div>
 				<a href="score.do?root="" ">*성적 관리</a>
 			</div>
 			<div>

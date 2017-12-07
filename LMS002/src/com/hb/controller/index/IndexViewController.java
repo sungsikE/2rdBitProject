@@ -33,14 +33,14 @@ public class IndexViewController extends HttpServlet{
 		
 		if(teamChk==null){
 			if(logChk.get(0).getLogChk()){
-				String team=logChk.get(0).getTeam();					
+				String team=logChk.get(0).getTeam();
+				String powerName=logChk.get(0).getPowerName();
 				session.setAttribute("power", team);
-
+				session.setAttribute("powerName",powerName);
 				if(team.equals("teach")){
 					int tid=(int)logChk.get(0).getHrid();
 					ArrayList<IndexDto> teaChk=dao.teachChk(tid);
-					if(teaChk.get(0).getLogChk()){				
-						session.setAttribute("teachName",teaChk.get(0).getTname());
+					if(teaChk.get(0).getLogChk()){	
 						session.setAttribute("lecid",teaChk.get(0).getLecId());								
 					}
 				}		
@@ -71,17 +71,19 @@ public class IndexViewController extends HttpServlet{
 		String teamChk=(String)session.getAttribute("power");
 		ArrayList<IndexDto> logChk=dao.loginChk(webid,webpw);
 		ArrayList lists=(ArrayList)session.getAttribute("statuslist");	
-		
 		if(teamChk==null){
 			if(logChk.get(0).getLogChk()){
-				String team=logChk.get(0).getTeam();					
+				
+				String team=logChk.get(0).getTeam();
+				String powerName=logChk.get(0).getPowerName();
 				session.setAttribute("power", team);
-
+				session.setAttribute("powerName", powerName);
+				System.out.println(powerName);
 				if(team.equals("teach")){
 					int tid=(int)logChk.get(0).getHrid();
+					
 					ArrayList<IndexDto> teaChk=dao.teachChk(tid);
-					if(teaChk.get(0).getLogChk()){				
-						session.setAttribute("teachName",teaChk.get(0).getTname());
+					if(teaChk.get(0).getLogChk()){			
 						session.setAttribute("lecid",teaChk.get(0).getLecId());								
 					}
 				}		

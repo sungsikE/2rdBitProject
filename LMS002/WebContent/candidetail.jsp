@@ -7,15 +7,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>후보생 상세 페이지</title>
 <script src="js/mktwebside.js"></script>
-
+<style type="text/css">
+input.submitLink {
+    background-color: transparent;
+    text-decoration: underline;
+    border: none;
+	font-size: 1em;
+    cursor: pointer;
+    }
+</style>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/후보생상세페이지</div>
 <h2>후보생 상세페이지</h2>
-<form action="candidetail.do?sId=${bean.sId }">
-
+<form action="candistuaddview.do" method="post">
 	<table border="1">
 		<tr>
 			<td>아이디</td>
@@ -46,11 +53,18 @@
 			<td>${bean.status }</td>
 		</tr>
 	</table>
-</form>
+	
+<input type="hidden" value="${bean.sId }"name="candiId">
+<input type="hidden" value="${bean.sName }"name="sName">
+<input type="hidden" value="${bean.birth }"name="birth">
+<input type="hidden" value="${bean.phone }"name="phone">
+<input type="hidden" value="${bean.email }"name="email">
+
 <a href="candiedit.do?sId=${bean.sId }">[수정]</a>
 <a href="candidelete.do?sId=${bean.sId }">[삭제]</a>
 <a href="candiview.do">[목록]</a>
-<a href="candiview.do">[입학]</a><!-- 입학누르면 테이블에서 삭제되고, stu테이블로 들어가짐. -->
+<input type=submit value="[입학]" class="submitLink">
+</form>
 </div>
 </body>
 </html>

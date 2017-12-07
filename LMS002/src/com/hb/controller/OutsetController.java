@@ -16,12 +16,12 @@ public class OutsetController extends HttpServlet {
 protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException {
 
-	//파일 주소는 upload 폴더가 있는 물리적 위치이며, 상용화시는 톰켓서버 아래있고 테스트 중에는 아마 각자의 
-	//로컬 Git 아래 혹은 이클립스 워크 폴더 아래가 됩니다. 따라서 테스트 중에는 
-	//이클립스 화면에서 upload 폴더의 properties를 치면 나오는 물리적 주소를 적고
-	//최종 war 파일 배포 전에는 주소를 톰켓의 설치 위치 기준으로 꼭 변경해야 합니다.
-	//File folders = new File("C:/Users/hb/git/HB6_2017_Project2/LMS002/WebContent/upload"); //학원
-	File folders = new File("C:/Users/daeil/git/HB6_2017_Project2/LMS002/WebContent/upload");
+	
+	File folders = new File("C:/Users/hb/git/HB6_2017_Project2/LMS002/WebContent/upload"); //회사 테스트시
+	//File folders = new File("C:/Users/daeil/git/HB6_2017_Project2/LMS002/WebContent/upload");//집 테스트시
+	///////////////////상용화시는 톰켓의 물리적 위치 기준으로 file 주소 변경/////////////////////////////////////
+
+	
 	String menulist="";
 	if(folders.exists()){
 //		System.out.println(folders.getCanonicalPath());

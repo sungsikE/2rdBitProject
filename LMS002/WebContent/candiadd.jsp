@@ -8,7 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>후보생 추가 페이지</title>
 <script src="js/mktwebside.js"></script>
-
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
@@ -30,7 +29,7 @@
 </div>
 <div>
 	<label for="birth">생일</label>
-	<input type="date" name="birth" />
+	<input type="date" name="birth"/>
 </div>
 <div>
 	<label for="phone">전화번호</label>

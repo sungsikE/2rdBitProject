@@ -12,8 +12,45 @@ public class CandiDao {
 
 	Connection conn=MyOracle.getConnection();
 	PreparedStatement pstmt;
+	PreparedStatement pstmt2;
 	ResultSet rs;
-	
+	ResultSet rs2;
+	public ArrayList<CandiDto> candiStuAddView(){
+		ArrayList<CandiDto> list=null;
+		String sidSql="select max(sid) as sid from stu";
+		String regclassSql="select lecid from lectures where status='opened'";
+		conn=MyOracle.getConnection();
+		try {
+			pstmt=conn.prepareStatement(sidSql);
+			rs=pstmt.executeQuery();
+			list= new ArrayList<CandiDto>();
+			if(rs.next()){
+				CandiDto bean=new CandiDto();
+				bean.setsId(rs.getInt("sId")+1);
+				list.add(bean);
+				pstmt2=conn.prepareStatement(regclassSql);
+				rs2=pstmt2.executeQuery();
+				while(rs2.next()){
+					bean=new CandiDto();
+					bean.setRegclass(rs2.getInt("lecid"));
+					list.add(bean);
+				}
+			}	
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{	
+				try {
+					if(rs2!=null)rs2.close();
+					if(pstmt2!=null)pstmt2.close();
+					if(rs!=null)rs.close();
+					if(pstmt!=null)pstmt.close();
+					if(conn!=null)conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+		return list;
+	}
 	public ArrayList<CandiDto> CandiAddView(){//학생추가시 번호자동부여
 		
 		ArrayList<CandiDto> list=null;
@@ -85,7 +122,39 @@ public class CandiDao {
 			}
 		}
 	}
-	
+	public void CandiDelStuAdd(int sId,String sName, String birth, String phone, String email, int regclass,int candiId){
+		String sql="insert into stu values(?,?,to_date(?,'yyyy-mm-dd'),?,?,'수강중',?)";
+//		String sql2="update stu set "
+		conn=MyOracle.getConnection();
+		try {
+			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, sId);
+			pstmt.setString(2, sName);
+			pstmt.setString(3, birth);
+			pstmt.setString(4, phone);
+			pstmt.setString(5, email);
+			pstmt.setInt(6, regclass);
+			int returnChk=pstmt.executeUpdate();
+			
+			if(returnChk>0){
+				CandiDelete(candiId);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
 	public ArrayList<CandiDto> CandiView(){//후보생조회페이지
 		ArrayList<CandiDto> list2=null;
 		String sql="select * from candi";

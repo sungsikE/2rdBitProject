@@ -15,7 +15,7 @@ public class RollCallDao {
 	ArrayList<RollDto> roll;
 	
 	public ArrayList<RollDto> todayRoll(){
-		String sql="select * from stu where status='ìˆ˜ê°•ì¤‘'";
+		String sql="select * from stu where status='¼ö°­Áß'";
 		conn=MyOracle.getConnection();
 		try{
 			pstmt=conn.prepareStatement(sql);
@@ -39,5 +39,38 @@ public class RollCallDao {
 			}
 		}
 		return roll;
-	}
-}
+	}//method end
+	
+	public void insertRollCall (ArrayList<String> rollcall){
+		System.out.println("Dao inside, rollcall list size :"+rollcall.size());
+		System.out.println("Dao inside, rollcall test :"+rollcall.get(5));
+		
+		String sql="insert into roll(rollid, calldate, sclass, stuid, stuname, status)";
+		for(int i=0; i<rollcall.size(); i++){
+			String[] param =rollcall.get(i).split("-");
+			sql +=" select 9999, sysdate,"+param[0]+","+param[1]+","+"'"+param[2]+"', '"+param[3]+"' from DUAL UNION ALL";
+		}
+		sql=sql.substring(0, sql.length()-9);
+		
+		System.out.println(sql);
+		
+		conn=MyOracle.getConnection();
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.executeQuery();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}//method end
+}//class end

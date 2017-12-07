@@ -11,19 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.hb.model.stu.StuDao;
 import com.hb.model.stu.StuDto;
-@WebServlet("/studetail.do")
-public class StuDetailController extends HttpServlet{
+@WebServlet("/stugudetail.do")
+public class StuGUDetailController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		StuDao dao=new StuDao();
+		
 		int sId=Integer.parseInt(req.getParameter("sId"));
-		StuDto bean=dao.Studetail(sId); 
+		System.out.println(sId);
+		StuDao dao=new StuDao();
+		System.out.println(dao);
+		StuDto bean=dao.StuGU(sId); 
 		
 		req.setAttribute("bean", bean);
-		req.getRequestDispatcher("studetail.jsp").forward(req, resp);
+		req.getRequestDispatcher("stugudetail.jsp").forward(req, resp);
 		
 	}
 //	@Override

@@ -20,13 +20,23 @@ public class StuComController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		StuDao dao=new StuDao();
-		ArrayList<StuDto> list2= dao.StuCom();
-		
-		
-			req.setAttribute("list2", list2);
 			req.getRequestDispatcher("stucom.jsp").forward(req, resp);
+			System.out.println("stucom");
 		}
-	
+//	@Override
+//	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+//			throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+//		req.setCharacterEncoding("UTF-8");
+//		
+//		String sName=req.getParameter("sName");
+//		StuDao dao=new StuDao();
+//		ArrayList<StuDto> list2= dao.StuCom(sName);
+//		
+//		
+//		req.setAttribute("list2", list2);
+//		resp.sendRedirect("stugu.do");
+//		
+//	}
 	
 }

@@ -10,12 +10,40 @@
 	.rollRow{
 		display: none;
 	}
+	#tableHeads{
+		display:none;
+		border-bottom: 1px solid gray;
+	}
 </style>
 <script src="js/mktwebside.js"></script>
 <script>
 window.addEventListener("load", function(){
+	
 	var lecSelect = document.getElementById("lecidSelect");
+	
+	var teacherLogin = document.querySelector("#teacherLogin");
+	if(teacherLogin!=null){
+		lecSelect.value=teacherLogin.value;
+		lecSelect.disabled="true";
+		var theads = document.getElementById("tableHeads");
+		theads.style.display="block";
+		
+		var rollRows = document.querySelectorAll(".rollRow");
+		
+		//강사 분반 줄만 보이게
+		for(var i=0; i<rollRows.length; i++){
+			if(lecidSelect.value==rollRows[i].firstChild.nextSibling.innerHTML){
+				rollRows[i].style.display="block";
+			}
+		}	
+	}
+		
 	lecSelect.addEventListener("change", function(){
+		
+		//lecSelect.setAttribute("selectedLecid", lecSelect.value);
+		
+		var theads = document.getElementById("tableHeads");
+		theads.style.display="block";
 		
 		var rollRows = document.querySelectorAll(".rollRow");
 		
@@ -38,6 +66,15 @@ window.addEventListener("load", function(){
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a>&nbsp/&nbsp<a href="roll.do?root=""">출결 관리 </a> /출석부 입력 </div>
+<c:set var="power" value="${sessionScope.power }"></c:set>
+	<c:choose>
+		<c:when test="${power eq 'teach'}">
+			<c:set var="profile" value="${sessionScope.teachName }"></c:set>
+			<p>${profile } 강사님 환영</p>
+			<c:set var="chargedClass" value="${sessionScope.lecid }"></c:set>
+			<input type="hidden"  id="teacherLogin" value="${chargedClass }"/>
+		</c:when>
+	</c:choose>
 <h3>오늘의 출석</h3>
 <div>
 <label for="todaymark">오늘날짜:</label>
@@ -48,27 +85,28 @@ window.addEventListener("load", function(){
 <form action="rollcall.do" method="post">
 <div>
 <label for="lecid">분반선택:</label>
-<select name="lecid" id="lecidSelect">
+<select id="lecidSelect" name="lecidchk">
 	<option value="no" >선택하세요</option>
 	<c:forEach items="${lecidList }" var="bean">
 	<option value="${bean }" >${bean }</option>
 	</c:forEach>
 </select>
 </div>
+
 <table>
-			<tr>
-				<th>분반</th>
-				<th>학번</th>
-				<th>이름</th>
-				<th>출결</th>
-			</tr>
+			<tr id="tableHeads">
+				<th>분 반</th>
+				<th>학 번</th>
+				<th>이 름</th>
+				<th>출 결</th>
+			</tr>			
 			<c:forEach items="${roll}" var="activeStudent">
 				<tr class="rollRow">
 					<td>${activeStudent.sclass }</td>
 					<td>${activeStudent.stuid }</td>
 					<td>${activeStudent.stuname }</td>
 					<td>
-						<select name="status">
+						<select name="${activeStudent.sclass }-${activeStudent.stuid }-${activeStudent.stuname }-">
 							<option value="출석" >출석</option>
 							<option value="결석">결석</option>
 							<option value="지각" >지각</option>
@@ -78,8 +116,8 @@ window.addEventListener("load", function(){
 				</tr>
 			</c:forEach>
 		</table>
-		<!-- <button type="submit">입력</button>
-		<button type="reset">취소</button> -->	
+		<button type="submit">입력</button>
+		<button type="reset">취소</button>	
 </form>
 
 </div>
