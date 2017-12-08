@@ -27,7 +27,7 @@ p{
 </head>
 <body>
 <div></div>
-<p>죄송합니다. 요청하신 페이지를 찾을 수 없습니다. 비트캠프 홈페이지로 이동합니다.</p>
+<p>죄송합니다. 요청하신 서비스에 문제가 있습니다. 비트캠프 홈페이지로 이동합니다.</p>
 
 <script type="text/javascript">
     function redirect() {

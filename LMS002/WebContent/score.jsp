@@ -13,7 +13,7 @@
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a> /성적 관리 </div>
-	 <p><a href="score.do?root=addview">성적 입력하기</a></p>
+	 <p><a href="scorecall.do">성적 입력하기</a></p>
 	 <p><a href="score.do?root=editview">성적 수정하기</a></p>
 	 <p><a href="score.do?root=checkview">성적 조회하기</a></p>
 </div>

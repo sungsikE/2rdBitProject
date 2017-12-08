@@ -23,7 +23,7 @@
 				PW:<input type="text" name="webpw"/>			
 			</div>
 			<div>
-				<c:forEach items="${list }" var="bean" begin="6" end="6">
+				<c:forEach items="${list }" var="bean" begin="${list.size()-1 }" end="${list.size()-1 }">
 						NUM:<input type="text" name="hrid" value="${bean.hrid }" readonly="readonly"/>
 				</c:forEach>
 			</div>
@@ -33,7 +33,7 @@
 			<div> 
 		   Team:<select name="hrteam">
 		    	  <option>선택하세요</option>
-		    	  <c:forEach items="${list }" var="bean" begin="0" end="5">   	  		
+		    	  <c:forEach items="${list }" var="bean" begin="0" end="${list.size()-2 }">   	  		
 		          		<option value="${bean.team}">${bean.team}</option>
 		          </c:forEach>
 		         </select>

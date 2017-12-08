@@ -10,8 +10,12 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>startweb.do</welcome-file>
   </welcome-file-list>
-<error-page>
-      <error-code>404</error-code>
-      <location>/errorpages/error404.jsp</location>
-    </error-page>  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/errorpages/error404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/errorpages/error500.jsp</location>
+  </error-page>     
 </web-app>
