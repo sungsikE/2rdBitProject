@@ -7,6 +7,40 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>비트 캠프</title>
 <script src="js/mktwebside.js"></script>
+<script type="text/javascript">
+window.addEventListener("load", function(){
+	var snameVal = document.getElementById("sname");
+	var sidVal = document.getElementById("sid");
+	var spans = document.querySelectorAll('span'); 
+	
+	snameVal.onkeydown= function(){
+		if(event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39
+		  || event.keyCode == 46 ) return;
+		snameVal.value = snameVal.value.replace(/[\A-Z a-z 0-9]/,'', /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\']/g);
+	};
+	
+	sidVal.onkeydown= function(){
+		if(event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39
+		  || event.keyCode == 46 ) return;
+		sidVal.value = sidVal.value.replace(/[\A-Z a-z ㄱ-ㅎㅏ-ㅣ가-힣-]/g,'');
+		
+	};
+	snameVal.addEventListener("change",function(){
+		 spans[0].innerText='';
+	        if(snameVal.value.length<8){
+				spans[0].innerText='8자이상 작성';
+				snameVal.value="";
+			}
+		});	
+	sidVal.addEventListener("change",function(){
+		 spans[1].innerText='';
+	        if(sidVal.value.length!=4){
+				spans[1].innerText='ID는 4자입니다';
+				sidVal.value="";
+			}
+		});	
+});
+</script>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
@@ -16,11 +50,17 @@
 	<form action="checked.do" method="post">	
 		<div>
 			<label for="sname">이름</label>
-			<input type="text" name="sname" required>
+			<input type="text" name="sname" id="sname" required>
+		</div>
+		<div>
+			<span></span>
 		</div>
 		<div>
 			<label for="sid">ID</label>
-			<input type="text" name="sid" required>
+			<input type="text" name="sid" id="sid" required>
+		</div>
+		<div>
+			<span></span>
 		</div>
 		<div>
 			<button type="submit">조회</button>

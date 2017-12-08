@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>비트 캠프</title>
+
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
@@ -23,9 +24,10 @@
 				</tr>			
 				<c:forEach items="${list }" var="bean">	
 				<tr>					
-					<td><a href="hrmgrdelete.do?hrid=${bean.hrid }">${bean.hrid }</a></td>
+					<td>${bean.hrid }</td>
 					<td>${bean.hrname }</td>
-					<td>${bean.team }</td>					
+					<td>${bean.team }</td>
+					<td><a href="hrmgrdelete.do?hrid=${bean.hrid }">삭제</a></td>			
 				</tr>
 				</c:forEach>
 			</table>

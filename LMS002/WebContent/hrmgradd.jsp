@@ -6,6 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>비트 캠프</title>
+<style type="text/css">
+	#hrmgrSpan {
+		color: red;
+	}
+
+</style>
 <script src="js/mktwebside.js"></script>
 <script type="text/javascript">
 window.addEventListener("load", function(){
@@ -47,14 +53,14 @@ window.addEventListener("load", function(){
 				
 			</div>
 			<div>
-				<span></span>
+				<span id="hrmgrSpan"></span>
 			</div>
 			<div>
 				PW:<input type="password" name="webpw" id="webpw" required/>
 						
 			</div>
 			<div>
-				<span></span>
+				<span id="hrmgrSpan"></span>
 			</div>
 			<div>
 				<c:forEach items="${list }" var="bean" begin="${list.size()-1 }" end="${list.size()-1}">
@@ -63,7 +69,10 @@ window.addEventListener("load", function(){
 			</div>
 			<div>
 				NAME:<input type="text" name="hrname" id="hrname" required/>
-				<span></span>
+
+			</div>
+			<div>
+				<span id="hrmgrSpan"></span>
 			</div>
 			<div> 
 		   Team:<select name="hrteam" required>

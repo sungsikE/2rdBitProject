@@ -7,6 +7,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>비트 캠프</title>
 <script src="js/mktwebside.js"></script>
+<script type="text/javascript">
+	window.addEventListener("load", function(){
+		var webidVal = document.getElementById("id");
+		var webpwVal = document.getElementById("pw");
+		var webrePwVal = document.getElementById("rePw");
+		var spans=document.querySelectorAll('span');
+		webidVal.onkeydown = function(){	
+			 //좌우 방향키, 백스페이스, 딜리트, 탭키에 대한 예외
+	        if(event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39
+	        || event.keyCode == 46 ) return;
+	        webidVal.value = webidVal.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣-]/g, '');       
+		};
+		webidVal.addEventListener("change",function(){
+		 spans[0].innerText='';
+	        if(webidVal.value.length<8){
+				spans[0].innerText='8자이상 작성';
+				webidVal.value="";
+			}
+		});		
+		webpwVal.addEventListener("change", function(){		
+	        spans[1].innerText='';   
+			if(webpwVal.value.length<8){
+				spans[1].innerText='8자이상 작성';
+				webpwVal.value="";
+			}
+		});
+		webrePwVal.addEventListener("change", function(){		
+	        spans[1].innerText='';    
+			if(webrePwVal.value.length<8){
+				spans[2].innerText='8자이상 작성';
+				webrePwVal.value="";
+			}
+			if(webpwVal.value!=webrePwVal.value){
+				spans[2].innerText='비밀번호 불일치';
+				webrePwVal.value="";
+			}
+			if(webpwVal.value==webrePwVal.value){
+				spans[2].innerText='비밀번호 일치';
+			}
+		});
+	});
+
+</script>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
@@ -25,16 +68,26 @@
 			</div>
 			<div>
 				<label for="id">WebID 입력</label>
-				<input type="text" name="id" value="${bean.webid }" required/>
+				<input type="text" name="id" value="${bean.webid }" id="id"  style="ime-mode:disabled;" required/>
+			</div>
+			<div>
+				<span></span>
 			</div>
 			<div>
 				<label for="pw">WebPW 입력</label>
-				<input type="text" name="pw" required/>
+				<input type="password" name="pw" id="pw" required/>
+			</div>
+			<div>
+				<span></span>
 			</div>
 			<div>
 				<label for="rePw">PW 재입력</label>
-				<input type="text" name="rePw" required/>
+				<input type="password" name="rePw" id="rePw" required/>
 			</div>
+			<div>
+				<span></span>
+			</div>
+			
 			<div>
 				<button type="submit">완료</button>
 				<button type="reset">취소</button>
