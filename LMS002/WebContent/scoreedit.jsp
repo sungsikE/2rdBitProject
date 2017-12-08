@@ -26,7 +26,7 @@
 					<td>${bean.subject }</td>
 					<td>${bean.stuname }</td>
 					<td>
-						<input type="text" value="${bean.score }" name="${bean.scoreid }"/>
+						<input type="text" value="${bean.score }" name="${bean.scoreid }" required/>
 					</td>
 				</tr>
 			</c:forEach>

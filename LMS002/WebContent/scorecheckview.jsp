@@ -16,11 +16,11 @@
 	<h3>성적 조회</h3>
 	<form action="scorechecked.do" method="post">	
 		<div>
-			<label for="stuname">이름</label>
+			<label for="stuname" required>이름</label>
 			<input type="text" name="stuname">
 		</div>
 		<div>
-			<label for="stuid">ID</label>
+			<label for="stuid" required>ID</label>
 			<input type="text" name="stuid">
 		</div>
 		<div>

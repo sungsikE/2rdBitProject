@@ -16,11 +16,11 @@
 	<form action="score.do" method="post">
 		<div>
 			<label for="stuname">이름</label>
-			<input type="text" name="stuname"/>
+			<input type="text" name="stuname" required/>
 		</div>
 		<div>
 			<label for="stuid">ID</label>
-			<input type="text" name="stuid"/>
+			<input type="text" name="stuid" required/>
 		</div>
 		<div>
 			<input type="hidden" value="edit" name="root"/>

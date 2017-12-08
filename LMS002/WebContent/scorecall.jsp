@@ -99,7 +99,7 @@
 				<td>${bean.sclass }</td>
 				<td>${bean.stuid }</td>
 				<td>${bean.stuname }</td>
-				<td><input type="text" name="${bean.sclass }-${bean.stuid }-${bean.stuname }-"/></td>
+				<td><input type="text" name="${bean.sclass }-${bean.stuid }-${bean.stuname }-" required/></td>
 			</tr>			
 		</c:forEach>
 	</table>

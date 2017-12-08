@@ -16,11 +16,11 @@
 	<form action="checked.do" method="post">	
 		<div>
 			<label for="sname">이름</label>
-			<input type="text" name="sname">
+			<input type="text" name="sname" required>
 		</div>
 		<div>
 			<label for="sid">ID</label>
-			<input type="text" name="sid">
+			<input type="text" name="sid" required>
 		</div>
 		<div>
 			<button type="submit">조회</button>

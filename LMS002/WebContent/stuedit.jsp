@@ -22,27 +22,27 @@
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td><input type="text" name="sName" value="${bean.sName }"/></td>
+			<td><input type="text" name="sName" value="${bean.sName }" required/></td>
 		</tr>
 		<tr>
 			<td>생일</td>
-			<td><input type="date" name="birth" value="${bean.birth }"/></td>
+			<td><input type="date" name="birth" value="${bean.birth }" required/></td>
 		</tr>
 		<tr>
 			<td>전화번호</td>
-			<td><input type="phone" name="phone" value="${bean.phone }"/></td>
+			<td><input type="phone" name="phone" value="${bean.phone }" required/></td>
 		</tr>
 		<tr>
 			<td>이메일</td>
-			<td><input type="email" name="email" value="${bean.email }"/></td>
+			<td><input type="email" name="email" value="${bean.email }" required/></td>
 		</tr>
 		<tr>
 			<td>반</td>
-			<td><input type="number" name="regclass" value="${bean.regclass }"/></td>
+			<td><input type="number" name="regclass" value="${bean.regclass }" required/></td>
 		</tr>
 		<tr>
 			<td>상태</td>
-			<td><input type="text" name="status" value="${bean.status }"/></td>
+			<td><input type="text" name="status" value="${bean.status }" required/></td>
 		</tr>
 	</table>
 	<%-- </c:forEach> --%>

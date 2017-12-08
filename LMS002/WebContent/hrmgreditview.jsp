@@ -11,7 +11,7 @@
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
-<div class="lmsnavi">현재위치: <a href="lmsindex.dstartweb.doo"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 수정 </div>
+<div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 수정 </div>
 
 	<h3>직원 수정</h3>
 	<div>
@@ -25,7 +25,7 @@
 					</tr>							
 				</div>
 				<div>				
-					<select name="hrid">
+					<select name="hrid" required>
 						<c:forEach items="${list }" var="bean">
 							<option value="${bean.hrid }">${bean.hrid }</option>					
 						</c:forEach>

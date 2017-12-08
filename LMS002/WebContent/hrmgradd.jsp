@@ -7,6 +7,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>비트 캠프</title>
 <script src="js/mktwebside.js"></script>
+<script type="text/javascript">
+window.addEventListener("load", function(){
+	var idVal = document.getElementById("webid");
+	var spans=document.querySelectorAll('span');
+	idVal.addEventListener("change", function(){
+		spans[0].innerText='';
+        
+		if(!isNaN(idVal.value)){
+			spans[0].innerText='숫자만 입력 하지마시오';
+			idVal.value="";
+		}
+	});
+	
+	var pwVal = document.getElementById("webpw");
+	pwVal.addEventListener("change", function(){
+		
+        spans[1].innerText='';
+       
+		if(pwVal.value.length<8){
+			spans[1].innerText='8자이상 작성';
+			pwVal.value="";
+		}
+	});	
+});
+
+</script>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
@@ -17,29 +43,37 @@
 	
 		<form action="hrmgrinsert.do" method="post">
 			<div>
-				ID:<input type="text" name="webid"/>
+				ID:<input type="text" name="webid" id="webid" required/>
+				
 			</div>
 			<div>
-				PW:<input type="text" name="webpw"/>			
+				<span></span>
 			</div>
 			<div>
-				<c:forEach items="${list }" var="bean" begin="${list.size()-1 }" end="${list.size()-1 }">
-						NUM:<input type="text" name="hrid" value="${bean.hrid }" readonly="readonly"/>
+				PW:<input type="password" name="webpw" id="webpw" required/>
+						
+			</div>
+			<div>
+				<span></span>
+			</div>
+			<div>
+				<c:forEach items="${list }" var="bean" begin="${list.size()-1 }" end="${list.size()-1}">
+						NUM:<input type="text" name="hrid" value="${bean.hrid }" readonly="readonly" id="hrid"/>
 				</c:forEach>
 			</div>
 			<div>
-				NAME:<input type="text" name="hrname"/>
+				NAME:<input type="text" name="hrname" id="hrname" required/>
+				<span></span>
 			</div>
 			<div> 
-		   Team:<select name="hrteam">
-		    	  <option>선택하세요</option>
+		   Team:<select name="hrteam" required>
 		    	  <c:forEach items="${list }" var="bean" begin="0" end="${list.size()-2 }">   	  		
 		          		<option value="${bean.team}">${bean.team}</option>
 		          </c:forEach>
 		         </select>
          	</div>
 	        <div>               
-				<input type="submit" value="입력" >
+				<input type="submit" value="입력" > 
 				<input type="submit" value="취소">	
 			</div>
 		</form>

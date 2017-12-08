@@ -67,7 +67,7 @@
 
 <div>
 	 <label>반</label>
-	 <select name="regclass">
+	 <select name="regclass" required>
 		<option>수업중인 반</option>
 		<c:forEach items="${list}" var="bean2" begin="1" end="${list.size() }">
 			<option value="${bean2.regclass}">${bean2.regclass}</option> 

@@ -16,7 +16,7 @@
 	<h3>로그인ID&PW관리</h3>
 		<form action="hrmgrsup.do" method="post">
 			<div>
-  			이름<select name="hrid">
+  			이름<select name="hrid" required>
     	  			<option>선택하세요</option>
     	  			<c:forEach items="${list }" var="bean">   	  		
           				<option value="${bean.hrid}">${bean.hrid} (${bean.hrname})</option>
@@ -25,15 +25,15 @@
 			</div>
 			<div>
 				<label for="id">WebID 입력</label>
-				<input type="text" name="id" value="${bean.webid }"/>
+				<input type="text" name="id" value="${bean.webid }" required/>
 			</div>
 			<div>
 				<label for="pw">WebPW 입력</label>
-				<input type="text" name="pw"/>
+				<input type="text" name="pw" required/>
 			</div>
 			<div>
 				<label for="rePw">PW 재입력</label>
-				<input type="text" name="rePw"/>
+				<input type="text" name="rePw" required/>
 			</div>
 			<div>
 				<button type="submit">완료</button>

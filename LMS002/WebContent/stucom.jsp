@@ -19,7 +19,7 @@
 <h2>과거학생조회</h2>
 <form action="stugu.do" method="get">
 	<label>조회할 학생 이름을 입력하세요</label><br/>
-	<input type="text" name="sName" >
+	<input type="text" name="sName" required>
 	<button type="submit">조회</button>
 </form>
 		<%-- <table border="1">

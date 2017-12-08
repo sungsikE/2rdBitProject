@@ -25,22 +25,22 @@
 </div>
 <div>
 	<label for="sname">이름</label>
-	<input type="text" name="sName"/>
+	<input type="text" name="sName" required/>
 </div>
 <div>
 	<label for="birth">생일</label>
-	<input type="date" name="birth"/>
+	<input type="date" name="birth" required/>
 </div>
 <div>
 	<label for="phone">전화번호</label>
-	<input type="phone" name="phone" />
+	<input type="phone" name="phone" required/>
 </div>
 <div>
 	<label for="email">이메일</label>
-	<input type="email" name="email" />
+	<input type="email" name="email" required/>
 </div>
 <div>
-	상태 <select name="status">
+	상태 <select name="status" required>
 	<option>선택하세요</option>
 	<c:forEach items="${bean }" var="bean2">
 		<option value="${bean2.status }">${bean2.status }</option>

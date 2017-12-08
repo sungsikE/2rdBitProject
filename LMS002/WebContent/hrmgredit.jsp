@@ -21,11 +21,11 @@
 			</div>
 			<div>
 				<label for="hrname">이름</label>
-				<input type="text" name="hrname" value="${bean.hrname }"/>
+				<input type="text" name="hrname" value="${bean.hrname }" required/>
 			</div>
 			<div>
 				<label for="team">부서</label>
-				<input type="text" name="team" value="${bean.team }"/>
+				<input type="text" name="team" value="${bean.team }" required/>
 			</div>
 		</c:forEach>
 		<div>

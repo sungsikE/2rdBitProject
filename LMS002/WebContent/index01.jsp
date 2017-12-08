@@ -286,11 +286,11 @@
     <form action="lmsindex.do" method="post">
     <div>
         <label for="webid">ID</label>
-        <input type="text" name="webid"/>
+        <input type="text" name="webid" required/>
     </div>
     <div>
         <label for="webpw">PW</label>
-        <input type="text" name="webpw"/>
+        <input type="text" name="webpw" required/>
     </div>
     <div>
         <button type="submit">로그인</button>
