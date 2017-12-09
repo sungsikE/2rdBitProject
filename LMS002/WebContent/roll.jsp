@@ -15,7 +15,7 @@
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/출결 관리</div>
 	<!--<p><a class="a" href="roll.do?root=addview">[출석부 입력]</a></p>  -->
 	<p><a class="a" href="rollcall.do">출석부 입력</a></p>
-	<p><a class="a" href="absencewarn.do">출석율 위험 학생</a></p>
+	<p><a class="a" href="absencewarn.do">결석자(출석율) 관리</a></p>
 	<p><a class="a" href="roll.do?root=editview">출석부 수정</a></p>
 	<p><a class="a" href="roll.do?root=checkview">출석부 조회</a></p>
 </div>

@@ -13,29 +13,31 @@
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>&nbsp/&nbsp<a href="roll.do?root=""">출결관리</a>&nbsp/&nbsp결석자</div>
-<p2>결석자 목록(누적)</p2>
+<p>1. 최근(지난24시간) 결석/지각/조퇴자</p>
 	<table>
-		 <tr>
-		   <th>학번</th>
-		   <th>이름</th>
-		   <th>결석일</th>
-		   <th>비고</th>
-		   <th>비고2</th>
-		 </tr>
-		 <c:forEach items="${list }" var="bean">
-		 <tr>
-		 	<td>${bean.stuid }</td>
-		 	<td>${bean.stuname }</td>
-		 	<td>${bean.calldate }</td>
-		 	<td>${bean.status }</td>
-		 	<td>
-		 	<c:choose>
-				<c:when test="${bean.status eq '결석'}">1.0</c:when>
-				<c:otherwise>0.4</c:otherwise>
-			</c:choose>
-		 	</td>
-		 </tr>
-		 </c:forEach>
+		<tr>
+			<th>학번</th>
+			<th>출결</th>
+		</tr>
+		<c:forEach items="${recent }" var="recentWarn">
+		<tr>
+		 	<td>${recentWarn.key }</td>
+		 	<td>${recentWarn.value }</td>
+		</tr>
+		</c:forEach>	
+	</table>
+<p>2. 학번별 결석 누계</p>
+	<table>
+		<tr>
+			<th>학번</th>
+			<th>출결요약</th>
+		</tr>
+		<c:forEach items="${summary }" var="rollWarn">
+		<tr>
+		 	<td class="studetail">${rollWarn.key }</td>
+		 	<td>${rollWarn.value }</td>
+		</tr>
+		</c:forEach>	
 	</table>
 </div>	
 </body>

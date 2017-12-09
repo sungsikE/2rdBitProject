@@ -2,6 +2,7 @@ package com.hb.controller.roll;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,8 +21,11 @@ public class AbsenceController extends HttpServlet{
 		AbsenceDao dao = new AbsenceDao();
 		
 		ArrayList alist = dao.selectAll();
-		ArrayList sumlist = dao.sumAll();
+		Map<Integer, String> sumlist = dao.sumAll();
+		Map<Integer, String> recentWarn = dao.recentWarn();
 		
+		req.setAttribute("recent", recentWarn);
+		req.setAttribute("summary", sumlist);
 		req.setAttribute("list", alist);
 		req.getRequestDispatcher("absencewarn.jsp").forward(req, resp);
 	}

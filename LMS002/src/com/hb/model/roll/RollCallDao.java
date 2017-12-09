@@ -15,7 +15,7 @@ public class RollCallDao {
 	ArrayList<RollDto> roll;
 	
 	public ArrayList<RollDto> todayRoll(){
-		String sql="select * from stu where status='¼ö°­Áß'";
+		String sql="select * from stu where status='ìˆ˜ê°•ì¤‘'";
 		conn=MyOracle.getConnection();
 		try{
 			pstmt=conn.prepareStatement(sql);
