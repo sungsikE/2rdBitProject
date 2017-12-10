@@ -5,17 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>비트캠프</title>
+<script src="js/mktwebside.js"></script>
 </head>
 <body>
+<div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
+<div id="lmsweb">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="qanda.do">QnA관리</a>/답변상세</div>
 <h2>QnA 상세</h2>
 <h3>질문</h3>
-<table border=1>
+<table>
 	<tr>
-		<th>글번호</th>
-		<th>작성자</th>
+		<th>번호</th>
+		<th>이름</th>
 		<th>내용</th>
-		<th>이메일</th>
+		<th>메일</th>
 		<th>전화</th>
 	</tr>
 	<tr>
@@ -28,17 +32,19 @@
 	</c:forEach>	
 	</tr>	
 </table>
-<c:forEach items="${adetail }" var="bean">
-	<div>댓글: ${bean.content }</div>
+<c:forEach items="${adetail }" var="bean" varStatus="loop">
+	<div>답변#${loop.count }: ${bean.content }</div>
 	<div>by: ${bean.author }</div>
 </c:forEach>
-<form action="reply.do">
-		<div>
-		<label for="intro">댓글 추가</label><br>
+<br>
+<form action="reply.do" method="post">	
+		<label for="reply">답변 작성</label><br>
 		<textarea name="reply" id="reply" rows=5 cols=30></textarea>
-	</div>
+		<c:forEach items="${qdetail }" var="bean">
+		<input type="hidden" value="${bean.qnaid }" name="qid">
+		</c:forEach>
+		<div><button type="submit">입력</button></div>
 </form>
-<a href="qanda.do">QnA목록으로</a><br>
-<a href="lmsindex.do">메인으로</a>
+</div>
 </body>
 </html>

@@ -6,11 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>비트캠프</title>
+<script src="js/mktwebside.js"></script>
 </head>
 <body>
-<h2>QnA 질문 목록</h2>
-	<table border=1>
+<div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
+<div id="lmsweb">
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/QnA관리</div>
+<h2>Questions 목록</h2>
+	<table>
 		 <tr>
 		   <th>번호</th>
 		   <th>작성자</th>
@@ -42,5 +46,6 @@
 		 </c:forEach>
 	</table>
 	<a href="lmsindex.do">메인으로</a>
+</div>	
 </body>
 </html>
