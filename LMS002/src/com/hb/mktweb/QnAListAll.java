@@ -48,6 +48,6 @@ public class QnAListAll extends HttpServlet {
 		}
 		out.print("]}");
 		System.out.println("SVR: JSON print out finished");
-		//위 URL(/mktwebQnA.do)로 접속하니 데이타가 잘 뿌려진다. 이제  html 에서 jquery로 파싱작업을 해야한다.
+		
 	}
 }
