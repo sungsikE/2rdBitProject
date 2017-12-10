@@ -51,7 +51,7 @@ public class CandiDao {
 		}
 		return list;
 	}
-	public ArrayList<CandiDto> CandiAddView(){//ÇĞ»ıÃß°¡½Ã ¹øÈ£ÀÚµ¿ºÎ¿©
+	public ArrayList<CandiDto> CandiAddView(){//í•™ìƒì¶”ê°€ì‹œ ë²ˆí˜¸ìë™ë¶€ì—¬
 		
 		ArrayList<CandiDto> list=null;
 		String sql="select max(sid) as sid from candi";
@@ -91,12 +91,12 @@ public class CandiDao {
 		}
 		return list;
 		
-	}//±è¼º½ÄÀÌ ÄÚµåÂüÁ¶
+	}//ê¹€ì„±ì‹ì´ ì½”ë“œì°¸ì¡°
 	
 	public void CandiAdd(int sId, String sName, String birth, String phone, String email, String status, int regclass){
 		String addsql="insert into candi values(?,?,to_date(?,'yyyy-mm-dd'),?,?,?,?)";
 		System.out.println(addsql);
-		//ÇĞ»ıÃß°¡
+		//í•™ìƒì¶”ê°€
 		try {
 			pstmt=conn.prepareStatement(addsql);
 			pstmt.setInt(1, sId);
@@ -123,7 +123,7 @@ public class CandiDao {
 		}
 	}
 	public void CandiDelStuAdd(int sId,String sName, String birth, String phone, String email, int regclass,int candiId){
-		String sql="insert into stu values(?,?,to_date(?,'yyyy-mm-dd'),?,?,'¼ö°­Áß',?)";
+		String sql="insert into stu values(?,?,to_date(?,'yyyy-mm-dd'),?,?,'ìˆ˜ê°•ì¤‘',?)";
 //		String sql2="update stu set "
 		conn=MyOracle.getConnection();
 		try {
@@ -155,7 +155,7 @@ public class CandiDao {
 		}
 		
 	}
-	public ArrayList<CandiDto> CandiView(){//ÈÄº¸»ıÁ¶È¸ÆäÀÌÁö
+	public ArrayList<CandiDto> CandiView(){//í›„ë³´ìƒì¡°íšŒí˜ì´ì§€
 		ArrayList<CandiDto> list2=null;
 		String sql="select * from candi";
 		
@@ -189,7 +189,7 @@ public class CandiDao {
 		
 	}
 	
-	public CandiDto CandiDetail(int sId){//ÈÄº¸»ı »ó¼¼ÆäÀÌÁö
+	public CandiDto CandiDetail(int sId){//í›„ë³´ìƒ ìƒì„¸í˜ì´ì§€
 		CandiDto bean = new CandiDto();
 		String dsql="select * from candi where sid=?";
 		
@@ -228,7 +228,7 @@ public class CandiDao {
 	 
 	public void CandiEdit(int sId, String sName, String birth, String phone, String email, String status, int regclass){
 		String esql="update candi set sname=?, birth=to_date(?,'yyyy-mm-dd'), phone=?, email=?, status=?, regclass=? where sid=?";
-		//ÈÄº¸»ı ¼öÁ¤ÆäÀÌÁö-¿©±â¼­ status ¼ö°­¿¹Á¤À¸·Î ¹Ù²î¸é »èÁ¦µÇ°í stu Å×ÀÌºí·Î »ğÀÔ
+		//í›„ë³´ìƒ ìˆ˜ì •í˜ì´ì§€-ì—¬ê¸°ì„œ status ìˆ˜ê°•ì˜ˆì •ìœ¼ë¡œ ë°”ë€Œë©´ ì‚­ì œë˜ê³  stu í…Œì´ë¸”ë¡œ ì‚½ì…
 		
 		try {
 			pstmt=conn.prepareStatement(esql);
