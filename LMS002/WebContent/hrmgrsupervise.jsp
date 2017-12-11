@@ -25,6 +25,9 @@
 		height: 0px;
 		width: 0px;
 	}
+	.all label{
+		width: 100px;
+	}
 </style>
 <script src="js/mktwebside.js"></script>
 <script type="text/javascript">
@@ -75,33 +78,35 @@
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /로그인ID&PW관리 </div>
-	<div>
-	<h3>로그인ID&PW관리</h3>
+	
+	<h2>로그인ID&PW관리</h2>
 		<form action="hrmgrsup.do" method="post">
-			<div>
-  			이름<select name="hrid" required>
+		<div>
+			<label>이름</label>
+  			<select name="hrid" required>
     	  			<option>선택하세요</option>
     	  			<c:forEach items="${list }" var="bean">   	  		
           				<option value="${bean.hrid}">${bean.hrid} (${bean.hrname})</option>
          			 </c:forEach>
         		</select>
-			</div>
+		</div>
+			
 			<div>
-				<label for="id">WebID 입력</label>
+				<label for="id">WebID입력</label>
 				<input type="text" name="id" value="${bean.webid }" id="id"  style="ime-mode:disabled;" required/>
 			</div>
 			<div>
 				<span></span>
 			</div>
 			<div>
-				<label for="pw">WebPW 입력</label>
+				<label for="pw">WebPW입력</label>
 				<input type="password" name="pw" id="pw" required/>
 			</div>
 			<div>
 				<span></span>
 			</div>
 			<div>
-				<label for="rePw">PW 재입력</label>
+				<label for="rePw">PW재입력</label>
 				<input type="password" name="rePw" id="rePw" required/>
 			</div>
 			<div>
@@ -115,6 +120,6 @@
 		
 		</form>
 	</div>
-</div>
+
 </body>
 </html>

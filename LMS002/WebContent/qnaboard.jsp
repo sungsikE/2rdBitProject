@@ -65,7 +65,9 @@
 		 </tr>
 		 </c:forEach>
 	</table>
+	<div>
 	<a href="lmsindex.do">메인으로</a>
+	</div>
 </div>	
 </body>
 </html>

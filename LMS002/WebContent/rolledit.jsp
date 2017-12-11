@@ -33,7 +33,7 @@
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="roll.do?root="""> /출결 관리 </a> /출석부 수정 </div>
 	<h3>출석부 수정</h3>
-	<form action="rollsedit.do" method="post">	
+	<form action="rollsedit.do" method="get">	
 		<table>
 			<tr>
 				<th>날짜</th>

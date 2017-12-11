@@ -32,7 +32,7 @@
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="board01.do">이메일목록</a></div>
-<p>이메일 상세보기</p>
+<h2>이메일 상세보기</h2>
 	<table>
 		 <tr>
 		   <th>번호</th>
@@ -52,7 +52,9 @@
 		   <td>${bean.content }</td>
 		 </c:forEach>
 	</table>
+	<div>
 	<a href="lmsindex.do">메인으로</a>
+	</div>
 </div>	
 </body>
 </html>

@@ -137,8 +137,10 @@ window.addEventListener("load", function(){
 				</tr>
 			</c:forEach>
 		</table>
+		<div>
 		<button type="submit">입력</button>
 		<button type="reset">취소</button>	
+		</div>
 </form>
 
 </div>

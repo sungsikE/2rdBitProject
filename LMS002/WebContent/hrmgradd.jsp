@@ -28,6 +28,12 @@
 		height: 0px;
 		width: 0px;
 	}
+	form{
+		margin-left:40px;
+	}
+	#in input{
+		margin-left: 40px;
+	}
 </style>
 <script src="js/mktwebside.js"></script>
 <script type="text/javascript">
@@ -61,8 +67,7 @@ window.addEventListener("load", function(){
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 입력 </div>
-	<h3>직원 입력</h3>
-	<div>
+	<h2>직원 입력</h2>
 	
 		<form action="hrmgrinsert.do" method="post">
 			<div>
@@ -98,12 +103,12 @@ window.addEventListener("load", function(){
 		          </c:forEach>
 		         </select>
          	</div>
-	        <div>               
+	        <div id="in">               
 				<input type="submit" value="입력" > 
 				<input type="submit" value="취소">	
 			</div>
 		</form>
 	</div>
-</div>
+
 </body>
 </html>

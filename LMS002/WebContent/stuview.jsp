@@ -25,16 +25,7 @@
 		height: 0px;
 		width: 0px;
 	}
-</style>
-<script src="js/mktwebside.js"></script>
-<script type="text/javascript">
-	/* document.getElementById('stutb').onscroll=function(){
-        console.log("scrolling");
-        document.get
-    }; */
-</script>
-<style type="text/css">
-    #stutb>table{
+	/* #stutb>table{
         overflow: auto;
        	text-align: center;
         width: auto;
@@ -48,16 +39,23 @@
     }
     h2{
     	text-align:center;
-    }
-    
+    } */
 </style>
+<script src="js/mktwebside.js"></script>
+<script type="text/javascript">
+	/* document.getElementById('stutb').onscroll=function(){
+        console.log("scrolling");
+        document.get
+    }; */
+</script>
+
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
-<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stuview.do">현재학생조회</a></div>
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stu.do">학생관리</a>/<a href="stuview.do">현재학생조회</a></div>
 <h2>현재학생조회</h2>
-		<div id="stutb">
+		<!-- <div id="stutb"> -->
 		    
 		<table >
 			<tr>
@@ -76,9 +74,10 @@
 			</tr>
 		</c:forEach>
 		</table>
+		<br/>
 	<a href="stu.do">[목록으로]</a>
 		</div>
 	
-		</div>
+	<!-- 	</div> -->
 </body>
 </html>

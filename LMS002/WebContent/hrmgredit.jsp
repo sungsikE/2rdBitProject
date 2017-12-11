@@ -32,7 +32,7 @@
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 수정 </div>
-	<h3>직원 수정</h3>
+	<h2>직원 수정</h2>
 	<form action="hrmgredit.do" method="post">
 		<c:forEach items="${list }" var="bean">
 			<div>

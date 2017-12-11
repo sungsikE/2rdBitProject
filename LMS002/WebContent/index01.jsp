@@ -15,7 +15,7 @@
         	var menuout;
         	var menuclick;
             var menucnt=0; 
-           
+           	
             var menuccnt=0; 
             var wheelcnt=0;
             var menubrcnt=0;
@@ -80,7 +80,7 @@
         
         	 document.getElementById("logo").addEventListener("click",function(){ //lms시스템 오픈.
         		 menubrcnt++;
-        		
+        	
         		 document.getElementById("wrapper").style.transition="0.5s";
         		 document.getElementById("wrapper").style.position="absolute";
         		 document.getElementById("wrapper").style.width="70%";
@@ -92,7 +92,6 @@
                  document.getElementById("login").style.position= "relative";
                  document.getElementById("login").style.height="900px";
                  document.getElementById("login").style.width="30%";
-                 
                  document.getElementById("login").style.float="right";
                  document.getElementById("login").style.overlow="visible" ;
                  
@@ -365,7 +364,7 @@
 <body>
 	
 	<div id="wrapper">
-		<a href="startweb.do"><img id="home" src="imgs/logo3.png"></a>
+		<a href="/LMS002"><img id="home" src="imgs/logo3.png"></a>
 		<img id="logo" src="imgs/plus.png">
 		<div id="padding">
 			<c:forEach items="${loadmenu }" var="menulist">

@@ -33,7 +33,7 @@
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/이메일상담</div>
-<p2>이메일 상담 목록</p2>
+<h2>이메일 상담 목록</h2>
 	<table>
 		 <tr>
 		   <th>번호</th>

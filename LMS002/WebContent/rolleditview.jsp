@@ -67,7 +67,7 @@ window.addEventListener("load", function(){
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="roll.do?root="""> /출결 관리 </a> /출석부 수정 </div>
 	<h3>출석부 수정</h3>
-	<form action="roll.do" method="post">
+	<form action="roll.do" method="get">
 		<div>
 			<label for="sname">이름</label>
 			<input type="text" name="sname" id="sname" style="ime-mode:disabled;" required/>

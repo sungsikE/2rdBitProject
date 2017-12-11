@@ -14,7 +14,7 @@ import com.hb.model.index.IndexDao;
 import com.hb.model.index.IndexDto;
 
 
-@WebServlet("/lmsindex.do") // �ڵ� �輺��
+@WebServlet("/lmsindex.do") 
 public class IndexViewController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -49,7 +49,7 @@ public class IndexViewController extends HttpServlet{
 				req.getRequestDispatcher("lmsindex.jsp").forward(req, resp);
 				return;
 			}
-			resp.sendRedirect("lmslogin.jsp");
+			resp.sendRedirect("startweb.do");
 			return;
 		}
 		if(teamChk!=null){
@@ -93,7 +93,7 @@ public class IndexViewController extends HttpServlet{
 				//req.getRequestDispatcher("lmsindex.jsp").forward(req, resp); //ó�� �α����� ȭ�� ���ҷ����� ����
 				return;
 			}
-			resp.sendRedirect("lmslogin.jsp");
+			resp.sendRedirect("startweb.do");
 			return;
 		}
 		if(teamChk!=null){	

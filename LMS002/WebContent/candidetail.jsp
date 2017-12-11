@@ -40,7 +40,7 @@ input.submitLink {
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/후보생상세페이지</div>
 <h2>후보생 상세페이지</h2>
-<form action="candistuaddview.do" method="post">
+<form action="candistuaddview.do" method="get">
 	<table border="1">
 		<tr>
 			<td>아이디</td>

@@ -27,7 +27,11 @@ public class RollViewController extends HttpServlet{
 			req.setAttribute("list", teamList);
 
 		}else if(root.equals("edit")){
-			
+			String sname=req.getParameter("sname");
+			int stuid=Integer.parseInt(req.getParameter("sid"));
+			RollDao dao= new RollDao();
+			ArrayList<RollDto> editList= dao.editView(sname, stuid);
+			req.setAttribute("list", editList);
 		}else if(root.equals("check")){
 			
 		}else if(root.equals("addview")){

@@ -10,29 +10,7 @@
 <link rel="stylesheet" href="css/all.css"></link>
 <script src="js/mktwebside.js"></script>
 <style type="text/css">
-	#addtb{
-		margin: 10px;
-	}
-	#addtb div{
-		margin-bottom: 5px;
-	}
-	#addtb label{
-		width: 65px;
-		display:inline-block;
-		background-color: darkblue;
-		color:white;
-		text-align: center;
-	}
-	#addtb button{
-		margin-left: 100px;
-		margin-top: 20px;
-		text-align: center;
-	}
-	#addtb button:hover{
-		background-color: darkblue;
-		color:white;
-		outline: 0;
-	}
+	
 #mktweb{
 		position: absolute;
 		width: 100%;
@@ -50,15 +28,18 @@
 		height: 0px;
 		width: 0px;
 	}	
+	.all button{
+		margin-left: 80px;
+	}
 </style>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
-<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stuadd.do">학생추가</a></div>
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stu.do">학생관리</a>/<a href="stuadd.do">학생추가</a></div>
 <h2>학생추가</h2>
 
-<div id="addtb">
+
 <form action="stuadd.do" method="post">
 
 <div>
@@ -92,9 +73,11 @@
 		</c:forEach> 	
 	</select>
 </div>
+<div>
 	<button type="submit">입력</button>
+</div>
 </form>
 </div>
-</div>
+
 </body>
 </html>

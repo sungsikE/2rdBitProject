@@ -47,7 +47,7 @@
 					<td>${bean.status }</td>			
 				</tr>
 				</c:forEach>
-				<form action="roll.do" method="post">
+				<form action="roll.do" method="get">
 				<c:forEach items="${list }" var="bean" begin="0" end="0">			
 				<tr>
 					<div>

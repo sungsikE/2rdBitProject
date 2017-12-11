@@ -115,7 +115,7 @@
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/강좌개설</div>
-<p>강좌 개설</p>
+<h2>강좌 개설</h2>
 <form id="openLec" action="openlec.do" method="post">
 	<div>
 		<label for="lecid">강의코드</label>

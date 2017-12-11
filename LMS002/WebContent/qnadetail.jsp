@@ -26,6 +26,9 @@
 		height: 0px;
 		width: 0px;
 	}
+	#rp{
+		margin-left: 100px;
+	}
 </style>
 </head>
 <body>
@@ -57,7 +60,7 @@
 	<div>by: ${bean.author }</div>
 </c:forEach>
 <br>
-<form action="reply.do" method="post">	
+<form action="reply.do" method="post" id="rp">	
 		<label for="reply">답변 작성</label><br>
 		<textarea name="reply" id="reply" rows=5 cols=30></textarea>
 		<c:forEach items="${qdetail }" var="bean">

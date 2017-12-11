@@ -33,7 +33,7 @@
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>&nbsp/&nbsp<a href="roll.do?root=""">출결관리</a>&nbsp/&nbsp결석자</div>
-<p>1. 최근(지난24시간) 결석/지각/조퇴자</p>
+<h2>1. 최근(지난24시간) 결석/지각/조퇴자</h2>
 	<table>
 		<tr>
 			<th>학번</th>
@@ -46,7 +46,7 @@
 		</tr>
 		</c:forEach>	
 	</table>
-<p>2. 학번별 결석 누계</p>
+<h2>2. 학번별 결석 누계</h2>
 	<table>
 		<tr>
 			<th>학번</th>

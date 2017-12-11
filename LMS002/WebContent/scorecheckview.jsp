@@ -34,7 +34,7 @@
 <div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="score.do?root="""> /성적 관리 </a> /성적 조회 </div>
 	<h3>성적 조회</h3>
-	<form action="scorechecked.do" method="post">	
+	<form action="scorechecked.do" method="get">	
 		<div>
 			<label for="stuname" required>이름</label>
 			<input type="text" name="stuname">
