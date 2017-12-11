@@ -43,6 +43,8 @@ function getList() {
 		}
 		
 		rows=document.querySelectorAll("#QnAPosition>table>tbody:nth-child(1)~tbody");
+		//셀렉터는 tbody의 첫줄(th를 갖는 tr)만 제외한 나머지 tr을 찍는데
+		//tr 상위노드인 tbody에 이벤트가 달리고, 따라서 removeEventLis 떄도 tbody 노드 선택 필수.
 		for(var i=0; i<rows.length; i++){
 			rows[i].addEventListener("click",selectOne);
 		}
@@ -62,9 +64,13 @@ function selectOne() {
 			for(var i=0; i<arr.length; i++){
 				target.nextSibling.nextSibling.innerHTML+="<p class='repls'>답변:"+arr[i].aname+"_"+arr[i].atext+"</p>";
 			}
+			
+			target.parentNode.parentNode.removeEventListener("click", selectOne);
+			//td 위의 tr 위의 tbody 에 걸어준다.
 		}
 	});
 }
+
 
 window.addEventListener('load', function(){
 	
