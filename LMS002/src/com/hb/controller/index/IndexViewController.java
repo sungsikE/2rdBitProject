@@ -88,15 +88,17 @@ public class IndexViewController extends HttpServlet{
 					}
 				}		
 				ArrayList<IndexDto> list= dao2.indexView();			
-				session.setAttribute("statuslist", list);		
-				req.getRequestDispatcher("lmsindex.jsp").forward(req, resp);
+				session.setAttribute("statuslist", list);
+				resp.sendRedirect("lmsindex.jsp");
+				//req.getRequestDispatcher("lmsindex.jsp").forward(req, resp); //처음 로그인후 화면 못불러오는 원인
 				return;
 			}
 			resp.sendRedirect("lmslogin.jsp");
 			return;
 		}
 		if(teamChk!=null){	
-			req.getRequestDispatcher("lmsindex.jsp").forward(req, resp);	
+			resp.sendRedirect("lmsindex.jsp");
+			//req.getRequestDispatcher("lmsindex.jsp").forward(req, resp);//처음 로그인후 화면 못불러오는 원인
 		}	
 		
 	}

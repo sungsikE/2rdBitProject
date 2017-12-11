@@ -7,11 +7,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <a href="logout.do">logout</a>
 	<table>
 	<div>
@@ -101,6 +102,7 @@
 	</c:choose>
 	<p>${sessionScope.teachName }</p>
 	<p>${sessionScope.lecid }</p>
-</div>	
+</div>
+	
 </body>
 </html>
