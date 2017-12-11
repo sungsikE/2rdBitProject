@@ -38,7 +38,7 @@
 <a href="logout.do">logout</a>
 <p>${sessionScope.powerName } 님 환영합니다.</p>
 <p>${sessionScope.power } 팀</p>
-
+<h2>현재 운영중 강좌</h2>
 	<table>
 	<div>
         <tr>
@@ -57,6 +57,7 @@
  	 </c:forEach>
      </div>   
 	</table>
+	<h2>LMS 메뉴</h2>
 	<c:set var="power" value="${sessionScope.power }"></c:set>
 	<c:if test="${power eq 'master' or power eq 'mgr' }">
 			<div>
@@ -164,6 +165,8 @@
 		</c:when>
 	</c:choose> --%>
 </div>
-	
+<script>
+document.getElementById("logo").style.visiblity="hidden";
+</script>	
 </body>
 </html>

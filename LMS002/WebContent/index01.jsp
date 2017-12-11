@@ -365,7 +365,15 @@
 	
 	<div id="wrapper">
 		<a href="/LMS002"><img id="home" src="imgs/logo3.png"></a>
-		<img id="logo" src="imgs/plus.png">
+ 		<c:set var="power" value="${sessionScope.power }"></c:set>
+		<c:choose>
+			<c:when test="${power eq null}">
+				<img id="logo" src="imgs/plus.png">
+ 			</c:when>
+ 			<c:otherwise>
+ 				<img id="logo">
+ 			</c:otherwise>
+ 		</c:choose>
 		<div id="padding">
 			<c:forEach items="${loadmenu }" var="menulist">
 				<h1>${menulist }</h1>

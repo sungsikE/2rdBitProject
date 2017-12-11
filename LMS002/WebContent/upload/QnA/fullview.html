@@ -8,6 +8,16 @@
 	font-size: 0.7em;
 	text-align: left;
 }
+#qnaright {
+	display: block;
+}
+#qnaleft {
+	display: block;
+}
+#QnAPosition>table {
+	width: 60%;
+	margin: auto;
+}
 </style>
 <script type="text/javascript">
 var xhr;
@@ -27,7 +37,7 @@ function getList() {
 		var json=JSON.parse(msg);
 		var arr=json.qnalist;
 		
-		listTable.innerHTML="<tr><th>글번호</th><th>글내용</th><th>댓글수</th></tr>";
+		listTable.innerHTML="<tr><th>질문번호</th><th>질문내용</th><th>답변수</th></tr>";
 		for(var i=0; i<arr.length; i++){
 			listTable.innerHTML+="<tr><td>"+arr[i].qid+"</td><td>"+arr[i].qtext+"</td><td>"+arr[i].repcnt+"</td></tr>";
 		}
@@ -66,9 +76,21 @@ window.addEventListener('load', function(){
 </script>
 </head>
 <body>
-<p>QnA 리스트</p>
+<img alt="email" src="upload/QnA/qnabanner.png">
+<div id="qnaright">
+<form id="askquestion.do">
+<div><h3>무엇이든 물어보세요</h3></div>
+<div>
+<textarea name="question" id="question" rows=4 cols=70></textarea>
+<br><button type="submit">질문등록</button>
+</div>
+</form>
+</div>
+<div id="qnaleft">
+<h3>QnA 리스트</h3>
 <div id="QnAPosition">
 <table></table>
+</div>
 </div>
 </body>
 </html>
