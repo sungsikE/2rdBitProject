@@ -52,23 +52,22 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 		String name	= paramNames.nextElement().toString();
 		String value = req.getParameter(name);
 		paramMap.put(name, value);
-		//System.out.print(name+":");
-		//System.out.println(value);
+		System.out.print(name+":");
+		System.out.println(value);
 	}
 	System.out.println("--------------------");
 	ArrayList<String> rollCallData = new ArrayList<String>();; 
 	String classChker = (String) paramMap.get("lecidchk");
-	//System.out.println("A "+classChker);
+	System.out.println("A "+classChker);
 	Iterator<String> keys = paramMap.keySet().iterator();
 	while(keys.hasNext()) {
 		String key=keys.next();
-		//System.out.println("°¨ "+key);
 		String keyChker=key.substring(0, 4);
-		//System.out.println("B "+keyChker);
+		//System.out.println("B"+keyChker);
 		String value=(String) paramMap.get(key);
 		if(keyChker.equals(classChker)){
 			key+=value;
-			//System.out.println(key);
+			System.out.println(key);
 			rollCallData.add(key);
 		}
 	}

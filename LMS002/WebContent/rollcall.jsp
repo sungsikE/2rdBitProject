@@ -37,7 +37,7 @@
 <script>
 window.addEventListener("load", function(){
 	
-	var lecSelect = document.getElementById("lecidSelect");
+	var lecSelect = document.getElementById("lecidchk");
 	
 	var teacherLogin = document.querySelector("#teacherLogin");
 	if(teacherLogin!=null){
@@ -50,7 +50,7 @@ window.addEventListener("load", function(){
 		
 		//강사 분반 줄만 보이게
 		for(var i=0; i<rollRows.length; i++){
-			if(lecidSelect.value==rollRows[i].firstChild.nextSibling.innerHTML){
+			if(lecSelect.value==rollRows[i].firstChild.nextSibling.innerHTML){
 				rollRows[i].style.display="block";
 			}
 		}	
@@ -73,7 +73,7 @@ window.addEventListener("load", function(){
 		
 		//선택된 분반 줄만 보이게
 		for(var i=0; i<rollRows.length; i++){
-			if(lecidSelect.value==rollRows[i].firstChild.nextSibling.innerHTML){
+			if(lecSelect.value==rollRows[i].firstChild.nextSibling.innerHTML){
 				rollRows[i].style.display="block";
 			}
 		}
@@ -104,9 +104,14 @@ window.addEventListener("load", function(){
 </div>
 
 <form action="rollcall.do" method="post">
+<c:set var="power" value="${sessionScope.power }"></c:set>
+<c:if test="${power eq 'teach' or power eq 'mgr' }">
+	<input type="hidden" name="lecidchk" value="${sessionScope.lecid }">
+</c:if>
 <div>
-<label for="lecid">분반선택:</label>
-<select id="lecidSelect" name="lecidchk">
+<label for="lecidchk">분반선택:</label>
+<select id="lecidchk" name="lecidchk">
+<!-- <select id="lecidSelect" name="lecidchk"> -->
 	<option value="no" >선택하세요</option>
 	<c:forEach items="${lecidList }" var="bean">
 	<option value="${bean }" >${bean }</option>
