@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>강좌 개설</title>
+<title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <style>
  #lectMonChecker{
  	display: none;
@@ -95,7 +96,7 @@
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/강좌개설</div>
 <p>강좌 개설</p>
 <form id="openLec" action="openlec.do" method="post">

@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>학생추가페이지</title>
+<title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <script src="js/mktwebside.js"></script>
 <style type="text/css">
 	#addtb{
@@ -36,7 +37,7 @@
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stuadd.do">학생추가</a></div>
 <h2>학생추가</h2>
 

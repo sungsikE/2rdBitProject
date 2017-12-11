@@ -7,11 +7,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>&nbsp/&nbsp<a href="roll.do?root=""">출결관리</a>&nbsp/&nbsp결석자</div>
 <p>1. 최근(지난24시간) 결석/지각/조퇴자</p>
 	<table>

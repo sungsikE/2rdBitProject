@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 </head>
 <body>
-	<h1>로그인 페이지</h1>
+<div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
+<div id="lmsweb" class="all">
+<h1>로그인 페이지</h1>
 <form action="lmsindex.do" method="post">
     <div>
         <label for="webid">WEBID</label>
@@ -21,5 +24,6 @@
         <button type="submit">로그인</button>
     </div>
 </form>
+</div>
 </body>
 </html>

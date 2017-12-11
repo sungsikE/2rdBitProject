@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>후보생 상세 페이지</title>
+<title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <script src="js/mktwebside.js"></script>
 <style type="text/css">
 input.submitLink {
@@ -19,7 +20,7 @@ input.submitLink {
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/후보생상세페이지</div>
 <h2>후보생 상세페이지</h2>
 <form action="candistuaddview.do" method="post">

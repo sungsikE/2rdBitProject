@@ -6,12 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>후보생 추가 페이지</title>
+<title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="candiadd.do">후보생추가</a></div>
 <h2>후보생추가페이지</h2>
 

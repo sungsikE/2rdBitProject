@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>비트 캠프</title>
+<title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <style>
 	.rollRow{
 		display: none;
@@ -65,14 +66,14 @@ window.addEventListener("load", function(){
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a>&nbsp/&nbsp<a href="roll.do?root=""">출결 관리 </a> /출석부 입력 </div>
 
 
 <c:set var="power" value="${sessionScope.power }"></c:set>
 	<c:choose>
 		<c:when test="${power eq 'teach'}">
-			<c:set var="profile" value="${sessionScope.teachName }"></c:set>
+			<c:set var="profile" value="${sessionScope.powerName }"></c:set>
 			<p>${profile } 강사님 환영</p>
 			<c:set var="chargedClass" value="${sessionScope.lecid }"></c:set>
 			<input type="hidden"  id="teacherLogin" value="${chargedClass }"/>

@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>비트 캠프</title>
+<title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <style type="text/css">
 	#hrmgrSpan {
 		color: red;
@@ -42,7 +43,7 @@ window.addEventListener("load", function(){
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 입력 </div>
 	<h3>직원 입력</h3>
 	<div>

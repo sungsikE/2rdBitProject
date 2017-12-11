@@ -6,12 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>성적 수정</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
 
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="score.do?root="""> /성적 관리 </a> /성적 수정 </div>
 <h3>성적 수정</h3>
 	<form action="scoresedit.do" method="post">	

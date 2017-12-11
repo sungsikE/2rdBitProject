@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>현재학생조회페이지</title>
+<title>비트캠프</title>
+<link rel="stylesheet" href="css/all.css"></link>
 <script src="js/mktwebside.js"></script>
 <script type="text/javascript">
 	/* document.getElementById('stutb').onscroll=function(){
@@ -34,7 +35,7 @@
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
-<div id="lmsweb">
+<div id="lmsweb" class="all">
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="stuview.do">현재학생조회</a></div>
 <h2>현재학생조회</h2>
 		<div id="stutb">

@@ -14,7 +14,7 @@ import com.hb.model.index.IndexDao;
 import com.hb.model.index.IndexDto;
 
 
-@WebServlet("/lmsindex.do") // ÄÚµù ±è¼º½Ä
+@WebServlet("/lmsindex.do") // ï¿½Úµï¿½ ï¿½è¼ºï¿½ï¿½
 public class IndexViewController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -90,7 +90,7 @@ public class IndexViewController extends HttpServlet{
 				ArrayList<IndexDto> list= dao2.indexView();			
 				session.setAttribute("statuslist", list);
 				resp.sendRedirect("lmsindex.jsp");
-				//req.getRequestDispatcher("lmsindex.jsp").forward(req, resp); //Ã³À½ ·Î±×ÀÎÈÄ È­¸é ¸øºÒ·¯¿À´Â ¿øÀÎ
+				//req.getRequestDispatcher("lmsindex.jsp").forward(req, resp); //Ã³ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				return;
 			}
 			resp.sendRedirect("lmslogin.jsp");
@@ -98,7 +98,7 @@ public class IndexViewController extends HttpServlet{
 		}
 		if(teamChk!=null){	
 			resp.sendRedirect("lmsindex.jsp");
-			//req.getRequestDispatcher("lmsindex.jsp").forward(req, resp);//Ã³À½ ·Î±×ÀÎÈÄ È­¸é ¸øºÒ·¯¿À´Â ¿øÀÎ
+			//req.getRequestDispatcher("lmsindex.jsp").forward(req, resp);//Ã³ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}	
 		
 	}
