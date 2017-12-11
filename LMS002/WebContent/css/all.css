@@ -1,5 +1,6 @@
 .all{
-		margin: 10px;
+	margin: 10px;
+
 	}
 .all h2, h3{
 		text-align: center;
@@ -67,10 +68,5 @@
 .logout{
 	float: right;
 }
-.menu{
-	
-}
-.lmsnavi {
-	
-	
-}
+
+ 

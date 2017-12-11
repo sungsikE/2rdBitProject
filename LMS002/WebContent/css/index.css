@@ -1,8 +1,6 @@
 * {
 	overflow: hidden;
-	margin: 0 auto;
 }
-
 #wrapper {
 	position: relative;
 	width: 100%;
@@ -34,18 +32,6 @@
 	/* cf. transition: width 0.5s makes it rugh */
 }
 
-#padding2>h1 {
-	color: #3D1775;
-	align-items: center;
-	width: 160px;
-	font-size: 2em;
-	position: relative;
-	left: 0px;
-	transition: 0.5s;
-	cursor: pointer;
-	text-align: center;
-	/* cf. transition: width 0.5s makes it rugh */
-}
 
 #content {
 	margin-top: 140px;
@@ -62,59 +48,20 @@
 	margin-top: 360px;
 	width: 100%;
 	height: 300px;
-	z-index: 3;
+	z-index: 2 ; 
 	transition: 1s;
-}
-
-#padding2 {
-	position: absolute;
-	margin-top: 1600px;
-	margin-left: 200px;
-	width: 100%;
-	z-index: 2;
-	transition: 1s;
-	visibility: hidden;
-}
-
-	
-	
-#imgs {
-	position: relative;
-	visibility: hidden;
-	padding-top: 600px;
-	padding-left: 250px;
-	width: 1100px;
-	height: 600px;
-	z-index: -1;
-	transition: 0.5s;
-}
-
-#video {
-	position: absolute;
-	visibility: hidden;
-	padding-top: 600px;
-	width: 1100px;
-	height: 600px;
-	z-index: -1;
-	transition: 0.5s;
-}
-
-#map {
-	position: absolute;
-	visibility: hidden;
-	width: 1100px;
-	height: 600px;
 }
 
 #login {
-	position: absolute;
-	margin-left: 2000px;
-	margin-top: 300px;
+	float: right;
+	position: absolute ;
+	margin-left: 0px ;
+	margin-top: 0px;
 	visibility: hidden;
 	width: 0%;
 	height: 0px;
 	transition: 1s;
-	z-index: 1;
+	z-index: 0;
 }
 
 #login label {
@@ -153,7 +100,7 @@
 
   @MEDIA screen and (max-height: 600px) {
         body {width: auto; height: auto;}
-		#padding{ margin-top: 0px; }
+		#padding{ margin-top: 0px ; }
 }
         
         @MEDIA screen and (max-width: 767px) {
