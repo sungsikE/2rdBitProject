@@ -87,11 +87,11 @@
                  document.getElementById("wrapper").style.float="left";
                  document.getElementById("padding").style.marginLeft="0px";
                  document.getElementById("padding").style.width="100%";
-                 document.getElementById("content").style.marginTop="200px" ;
+                 document.getElementById("content").style.marginTop="200px";
                  document.getElementById("login").style.visibility="visible";
-                 document.getElementById("login").style.position= "relative";
+                 document.getElementById("login").style.position= "relative" ;
                  document.getElementById("login").style.height="900px";
-                 document.getElementById("login").style.width="30%";
+                 document.getElementById("login").style.width="25%";
                  document.getElementById("login").style.float="right";
                  document.getElementById("login").style.overlow="visible" ;
                  
@@ -138,7 +138,7 @@
                 	 document.getElementById("wrapper").style.width="100%";
                 	 document.getElementById("wrapper").style.margin= "auto";
                 	 document.getElementById("wrapper").style.height= "1000px";
-                	 document.getElementById("login").style.marginLeft="2000px";
+                	 document.getElementById("login").style.marginLeft="2200px" ;
                 	 document.getElementById("login").style.marginTop= "300px";
                 	 document.getElementById("login").style.visibility= "hidden";
                 	 document.getElementById("login").style.width= "0%";

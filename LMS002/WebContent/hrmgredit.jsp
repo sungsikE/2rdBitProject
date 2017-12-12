@@ -53,7 +53,9 @@
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /직원 수정 </div>
 	<h2>직원 수정</h2>
 	<form action="hrmgredit.do" method="post">
+		
 		<c:forEach items="${list }" var="bean">
+		
 			<div>
 				<label for="hrid">ID</label>
 				<input type="text" name="hrid" value="${bean.hrid }" readonly="readonly"/>

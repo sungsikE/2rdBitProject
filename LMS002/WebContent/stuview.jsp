@@ -79,7 +79,6 @@
 		</c:forEach>
 		</table>
 		<br/>
-	<a href="stu.do">[목록으로]</a>
 		</div>
 	
 	<!-- 	</div> -->
