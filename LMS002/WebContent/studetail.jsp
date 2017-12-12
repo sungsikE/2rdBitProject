@@ -28,12 +28,31 @@
 	div>a{
 		margin-left:35px;
 	}
+	@MEDIA screen and (max-width: 767px) {
+	#mktweb{
+		display: none;
+	}
+	#lmsweb{
+		float: left;
+		width: 90%;
+		height: 500px;
+		overflow: scroll;
+	}
+	.all a{
+		margin-left:0px;
+	}
+	div.lmsnavi{
+	margin-left: 0px;
+	margin-top: 25px ;
+	}
+}	
 </style>
 <script src="js/mktwebside.js"></script>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
+<a href="logout.do" class="logout">logout</a>
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/학생상세조회</div>
 <h2>학생상세페이지</h2>
 <form action="studetail.do?sId=${bean.sId }">

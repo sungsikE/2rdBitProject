@@ -27,11 +27,31 @@
 		height: 0px;
 		width: 0px;
 	}
+	@MEDIA screen and (max-width: 767px) {
+	#mktweb{
+		display: none;
+	}
+	#lmsweb{
+		float: left;
+		width: 90%;
+		height: 500px;
+		overflow: scroll;
+	}
+	.all a{
+		margin-left:0px;
+	}
+	div.lmsnavi{
+	margin-left: 0px;
+	margin-top: 25px ;
+	}
+	
+}	
 </style>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
+<a href="logout.do" class="logout">logout</a>
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>&nbsp/&nbsp<a href="roll.do?root=""">출결관리</a>&nbsp/&nbsp결석자</div>
 <h2>1. 최근(지난24시간) 결석/지각/조퇴자</h2>
 	<table>

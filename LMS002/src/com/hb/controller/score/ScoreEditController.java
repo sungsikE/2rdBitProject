@@ -16,13 +16,16 @@ import com.hb.model.score.ScoreDto;
 
 @WebServlet(value="/scoresedit.do") // �ڵ� �輺��
 public class ScoreEditController extends HttpServlet{
+	SessionCheckController scc= new SessionCheckController();
+	boolean seChk;
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 	
 		resp.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-		SessionCheckController scc= new SessionCheckController();
-		if(scc.sessionChk(req, resp)){return;}
+		seChk = scc.sessionChk(req, resp);	
+		if(seChk){return;}
 		
 		String stuname=req.getParameter("stuname").trim();
 		int stuid=Integer.parseInt(req.getParameter("stuid").trim());	

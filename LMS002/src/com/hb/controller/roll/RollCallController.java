@@ -14,17 +14,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hb.controller.index.SessionCheckController;
 import com.hb.model.roll.RollCallDao;
 import com.hb.model.roll.RollDao;
 import com.hb.model.roll.RollDto;
 
 @WebServlet("/rollcall.do")
 public class RollCallController extends HttpServlet{
-	
+	SessionCheckController scc= new SessionCheckController();
+	boolean seChk;
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException {
-	
+	seChk = scc.sessionChk(req, resp);	
+	if(seChk){return;}
+
 	RollCallDao rollDao=new RollCallDao(); 
 	ArrayList<RollDto> roll=rollDao.todayRoll();
 	
@@ -42,6 +46,9 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 @Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+	seChk = scc.sessionChk(req, resp);	
+	if(seChk){return;}
+
 	req.setCharacterEncoding("UTF-8");
 	
 	Enumeration<String> paramNames = req.getParameterNames();

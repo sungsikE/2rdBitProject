@@ -30,22 +30,30 @@
 	.all a{
 		margin-left:100px;
 	}
-	@MEDIA screen and (max-width: 767px) {
+@MEDIA screen and (max-width: 767px) {
 	#mktweb{
 		display: none;
 	}
 	#lmsweb{
 		float: left;
-		width: 100%;
-		margin-left: 0px;
+		width: 90%;
+		height: 500px;
+		overflow: scroll;
 	}
-}
+	.all a{
+		margin-left:0px;
+	}
+	div.lmsnavi{
+	margin-left: 0px;
+	margin-top: 25px ;
+	}
+}	
 </style>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
-<a href="logout.do">logout</a>
+<a href="logout.do" class="logout">logout</a>
 <p>${sessionScope.powerName } 님 환영합니다.</p>
 <p>${sessionScope.power } 팀</p>
 <h2>현재 운영중 강좌</h2>

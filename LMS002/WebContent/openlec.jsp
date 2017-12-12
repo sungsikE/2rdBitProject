@@ -27,7 +27,28 @@
 		margin-top:0px;
 		height: 0px;
 		width: 0px;
-	} 
+	}
+@MEDIA screen and (max-width: 767px) {
+	#mktweb{
+		display: none;
+	}
+	#lmsweb{
+		float: left;
+		width: 90%;
+		height: 500px;
+		overflow: scroll;
+	}
+	.all a{
+		margin-left:0px;
+	}
+	div.lmsnavi{
+	margin-left: 0px;
+	margin-top: 25px ;
+	}
+	.all div{
+	margin-left: 0px ;
+	}
+}	
 </style>
 <script src="js/mktwebside.js"></script>
 <script>
@@ -114,6 +135,7 @@
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
+<a href="logout.do" class="logout">logout</a>
 <div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/강좌개설</div>
 <h2>강좌 개설</h2>
 <form id="openLec" action="openlec.do" method="post">

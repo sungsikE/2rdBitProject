@@ -33,15 +33,34 @@ input.submitLink {
 		height: 0px;
 		width: 0px;
 	}    
+	@MEDIA screen and (max-width: 767px) {
+	#mktweb{
+		display: none;
+	}
+	#lmsweb{
+		float: left;
+		width: 90%;
+		height: 500px;
+		overflow: scroll;
+	}
+	.all a{
+		margin-left:0px;
+	}
+	div.lmsnavi{
+	margin-left: 0px;
+	margin-top: 25px ;
+	}
+}	
 </style>
 </head>
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
-<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/후보생상세페이지</div>
+<a href="logout.do" class="logout">logout</a>
+<div class="lmsnavi">현재위치: <a href="lmsindex.do">LMS</a>/<a href="candiview.do">후보생목록</a>/상세</div>
 <h2>후보생 상세페이지</h2>
 <form action="candistuaddview.do" method="get">
-	<table border="1">
+	<table>
 		<tr>
 			<td>아이디</td>
 			<td>${bean.sId }</td>
@@ -77,11 +96,11 @@ input.submitLink {
 <input type="hidden" value="${bean.birth }"name="birth">
 <input type="hidden" value="${bean.phone }"name="phone">
 <input type="hidden" value="${bean.email }"name="email">
-
+<div>
 <a href="candiedit.do?sId=${bean.sId }">[수정]</a>
 <a href="candidelete.do?sId=${bean.sId }">[삭제]</a>
-<a href="candiview.do">[목록]</a>
 <input type=submit value="[입학]" class="submitLink">
+</div>
 </form>
 </div>
 </body>

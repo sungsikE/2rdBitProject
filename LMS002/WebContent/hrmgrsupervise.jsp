@@ -28,6 +28,24 @@
 	.all label{
 		width: 100px;
 	}
+	@MEDIA screen and (max-width: 767px) {
+	#mktweb{
+		display: none;
+	}
+	#lmsweb{
+		float: left;
+		width: 90%;
+		height: 500px;
+		overflow: scroll;
+	}
+	.all a{
+		margin-left:0px;
+	}
+	div.lmsnavi{
+	margin-left: 0px;
+	margin-top: 25px ;
+	}
+}	
 </style>
 <script src="js/mktwebside.js"></script>
 <script type="text/javascript">
@@ -77,6 +95,7 @@
 <body>
 <div id="mktweb"><c:import url="startweb.do"  charEncoding="utf-8"></c:import></div>
 <div id="lmsweb" class="all">
+<a href="logout.do" class="logout">logout</a>
 <div class="lmsnavi">현재위치: <a href="lmsindex.do"> LMS </a><a href="hrmgr.do?root="""> /계정 관리 </a> /로그인ID&PW관리 </div>
 	
 	<h2>로그인ID&PW관리</h2>

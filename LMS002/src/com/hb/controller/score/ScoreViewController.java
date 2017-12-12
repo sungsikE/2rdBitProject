@@ -16,10 +16,12 @@ import com.hb.model.score.ScoreDto;
 
 @WebServlet("/score.do")  // �ڵ� �輺��
 public class ScoreViewController extends HttpServlet{
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		resp.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+
 		String root=req.getParameter("root");
 		SessionCheckController scc= new SessionCheckController();
 		if(scc.sessionChk(req, resp)){return;}
