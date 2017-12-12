@@ -404,5 +404,17 @@
 			</div>
 		</form>
 	</div>
+	<div id="mobilelogin">
+		<h2>직원전용 페이지</h2>
+		<form action="lmsindex.do" method="post">
+
+			<label for="webid">ID</label> <input type="text" name="webid" /> <br />
+			<label for="webpw">PW</label> <input type="text" name="webpw" />
+
+			<div>
+				<button type="submit">로그인</button>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

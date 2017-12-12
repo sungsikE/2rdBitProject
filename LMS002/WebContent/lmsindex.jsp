@@ -30,6 +30,16 @@
 	.all a{
 		margin-left:100px;
 	}
+	@MEDIA screen and (max-width: 767px) {
+	#mktweb{
+		display: none;
+	}
+	#lmsweb{
+		float: left;
+		width: 100%;
+		margin-left: 0px;
+	}
+}
 </style>
 </head>
 <body>
