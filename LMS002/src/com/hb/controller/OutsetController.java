@@ -19,7 +19,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 	
 	File folders = new File("C:/Users/hb/git/prj1212/HB6_2017_Project2/LMS002/WebContent/upload"); //회사 테스트시
 	//File folders = new File("C:/Users/daeil/git/final1210/HB6_2017_Project2/LMS002/WebContent/upload");//집 테스트시
-	//File folders = new File("C:/Tomcat 7.0/webapps/LMS002/upload"); //회사 톰켓 배포시
+//	File folders = new File("C:/Tomcat 7.0/webapps/LMS002/upload"); //회사 톰켓 배포시
 	///////////////////상용화시는 톰켓의 물리적 위치 기준으로 file 주소 변경/////////////////////////////////////
 
 	
